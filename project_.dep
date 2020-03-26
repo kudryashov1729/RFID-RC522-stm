@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>1953959386</fileChecksum>
+    <fileChecksum>777167809</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -52,6 +52,13 @@
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
             <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h</file>
             <file>$PROJ_DIR$\..\..\AIR_workspace\task7.0(SPI)\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.xcl</file>
+            <file>$PROJ_DIR$\tm_stm32f4_mfrc522.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_spi.o</file>
+            <file>$PROJ_DIR$\TM\tm_stm32f4_spi.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_spi.xcl</file>
+            <file>$PROJ_DIR$\tm_stm32f4_mfrc522.c</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -203,6 +210,64 @@
                 </tool>
             </outputs>
         </file>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 48</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\system_stm32f4xx.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
     </configuration>
     <configuration>
         <name>Release</name>

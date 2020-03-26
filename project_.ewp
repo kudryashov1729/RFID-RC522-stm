@@ -352,6 +352,7 @@
                     <name>CCIncludePath2</name>
                     <state>D:\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include</state>
                     <state>D:\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc</state>
+                    <state>D:\Workspaces_stm32_\Project SPI MFRC522\TM</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -2105,6 +2106,15 @@
             <data />
         </settings>
     </configuration>
+    <group>
+        <name>TM</name>
+        <file>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+        </file>
+    </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>

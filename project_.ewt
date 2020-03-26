@@ -2369,6 +2369,15 @@
             </data>
         </settings>
     </configuration>
+    <group>
+        <name>TM</name>
+        <file>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+        </file>
+    </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
