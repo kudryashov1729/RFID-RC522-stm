@@ -13,7 +13,7 @@ void main()
   //CLOCKING
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
-  LL_APB2_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_SPI3);
+  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SPI1);
   
   //GPIO SETTING
   //  AF5 SPI1_NSS  PA4
@@ -32,40 +32,40 @@ void main()
   //  AF6 SPI3_MOSI PB5
   
   
-  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_15, LL_GPIO_MODE_ALTERNATE);
-  LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_3, LL_GPIO_MODE_ALTERNATE);
-  LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_4, LL_GPIO_MODE_ALTERNATE);
-  LL_GPIO_SetPinMode(GPIOB, LL_GPIO_PIN_5, LL_GPIO_MODE_ALTERNATE);
-  LL_GPIO_SetAFPin_8_15(GPIOA, LL_GPIO_PIN_15, LL_GPIO_AF_6);
-  LL_GPIO_SetAFPin_0_7(GPIOB, LL_GPIO_PIN_3, LL_GPIO_AF_6);
-  LL_GPIO_SetAFPin_0_7(GPIOB, LL_GPIO_PIN_4, LL_GPIO_AF_6);
-  LL_GPIO_SetAFPin_0_7(GPIOB, LL_GPIO_PIN_5,LL_GPIO_AF_6);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_7, LL_GPIO_MODE_ALTERNATE);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_6, LL_GPIO_MODE_ALTERNATE);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_ALTERNATE);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_5, LL_GPIO_MODE_ALTERNATE);
+  LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_7, LL_GPIO_AF_5);
+  LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_5);
+  LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_4, LL_GPIO_AF_5);
+  LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_5,LL_GPIO_AF_5);
   
   
   //SPI SETTING
-  LL_SPI_SetMode(SPI3, LL_SPI_MODE_MASTER);
-  LL_SPI_SetClockPhase(SPI3, LL_SPI_PHASE_1EDGE); // CPHA = 0
-  LL_SPI_SetClockPolarity(SPI3, LL_SPI_POLARITY_HIGH); // CPOL = 0
-  LL_SPI_SetBaudRatePrescaler(SPI3,  LL_SPI_BAUDRATEPRESCALER_DIV256);//??????????
-  LL_SPI_SetTransferBitOrder(SPI3,LL_SPI_MSB_FIRST);
-  LL_SPI_SetTransferDirection(SPI3, LL_SPI_FULL_DUPLEX);
-  LL_SPI_SetDataWidth(SPI3, LL_SPI_DATAWIDTH_8BIT);
-  LL_SPI_SetNSSMode (SPI3, LL_SPI_NSS_HARD_OUTPUT);
+  LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
+  LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
+  LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
+  LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV256);//??????????
+  LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
+  LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
+  LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
+  LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
   
-  LL_SPI_EnableIT_RXNE(SPI3);
-  LL_SPI_Enable(SPI3);
+  LL_SPI_EnableIT_RXNE(SPI1);
+  LL_SPI_Enable(SPI1);
   k = 0;
   
-  __NVIC_EnableIRQ(SPI3_IRQn);
+  __NVIC_EnableIRQ(SPI1_IRQn);
   
 
   //37h = 110111b
   //11101110b = EEh
   int data = 0xEE;
-  LL_SPI_TransmitData8(SPI3, data);
+  LL_SPI_TransmitData8(SPI1, data);
   for(int k = 0; k < 100000; k++);
-  data = 0x00;
-  LL_SPI_TransmitData8(SPI3, data);
+  data = 0x01;
+  LL_SPI_TransmitData8(SPI1, data);
   
   while(1){
 //    if(k < 16){
@@ -77,7 +77,7 @@ void main()
   };
 }
 
-void SPI3_IRQHandler() {
-  resived_data[k] = LL_SPI_ReceiveData8(SPI3);
+void SPI1_IRQHandler() {
+  resived_data[k] = LL_SPI_ReceiveData8(SPI1);
   k++;
 }
