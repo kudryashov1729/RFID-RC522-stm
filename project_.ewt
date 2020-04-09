@@ -2370,9 +2370,33 @@
         </settings>
     </configuration>
     <group>
+        <name>LL</name>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+        </file>
+    </group>
+    <group>
+        <name>SPL</name>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_spi.c</name>
+        </file>
+    </group>
+    <group>
         <name>TM</name>
         <file>
-            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
@@ -2383,15 +2407,6 @@
     </file>
     <file>
         <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\system_stm32f4xx.c</name>

@@ -10,6 +10,7 @@ volatile int k;
 
 void main()
 {
+  /*
   //CLOCKING
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
@@ -80,4 +81,5 @@ void main()
 void SPI1_IRQHandler() {
   resived_data[k] = LL_SPI_ReceiveData8(SPI1);
   k++;
+*/
 }
