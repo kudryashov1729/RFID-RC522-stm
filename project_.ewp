@@ -2105,20 +2105,23 @@
             <data />
         </settings>
     </configuration>
+    <group>
+        <name>LL</name>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+        </file>
+    </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\system_stm32f4xx.c</name>
