@@ -84,8 +84,8 @@
 /* Default CS pin used */
 #ifndef MFRC522_CS_PIN
 #define MFRC522_CS_RCC					RCC_AHB1Periph_GPIOG
-#define MFRC522_CS_PORT					GPIOG
-#define MFRC522_CS_PIN					GPIO_Pin_2
+#define MFRC522_CS_PORT					GPIOA
+#define MFRC522_CS_PIN					GPIO_Pin_4
 #endif
 
 /**

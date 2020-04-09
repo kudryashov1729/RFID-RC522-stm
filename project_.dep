@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>104096308</fileChecksum>
+    <fileChecksum>525755710</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -15,6 +15,9 @@
             <file>$PROJ_DIR$\main.c</file>
             <file>$PROJ_DIR$\startup_stm32f429xx.s</file>
             <file>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.xcl</file>
+            <file>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</file>
             <file>$PROJ_DIR$\Debug\Obj\system_stm32f4xx.o</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
             <file>$PROJ_DIR$\Debug\List\project_.map</file>
@@ -51,23 +54,24 @@
             <file>$PROJ_DIR$\Debug\Obj\main.o</file>
             <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_gpio.xcl</file>
             <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_bus.h</file>
+            <file>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.h</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 33</file>
+                    <file> 36</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 42</file>
+                    <file> 45</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 24 39 16 23 26 6 2 36 32 35 40 13 11 28 1 30 45 31</file>
+                    <file> 27 42 19 26 29 6 2 39 35 38 43 16 14 31 1 33 48 34</file>
                 </tool>
             </inputs>
         </file>
@@ -76,17 +80,17 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 10</file>
+                    <file> 13</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 29</file>
+                    <file> 32</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 39 16 23 26 6 2 36 32 35 40 13 11 28 1 30</file>
+                    <file> 42 19 26 29 6 2 39 35 38 43 16 14 31 1 33</file>
                 </tool>
             </inputs>
         </file>
@@ -95,17 +99,17 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 41</file>
+                    <file> 44</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 44</file>
+                    <file> 47</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 27 39 16 23 26 6 2 36 32 35 40 13 11 28 1 30 45</file>
+                    <file> 30 42 19 26 29 6 2 39 35 38 43 16 14 31 1 33 48</file>
                 </tool>
             </inputs>
         </file>
@@ -114,17 +118,17 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 43</file>
+                    <file> 46</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 19</file>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 16 23 26 6 2 36 32 35 40 13 11 28 1 30 45 39 24 31 27</file>
+                    <file> 19 26 29 6 2 39 35 38 43 16 14 31 1 33 48 42 27 34 30</file>
                 </tool>
             </inputs>
         </file>
@@ -133,7 +137,7 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 37</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
         </file>
@@ -142,7 +146,7 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 25</file>
+                    <file> 28</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -152,7 +156,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 31 39 16 23 26 6 2 36 32 35 40 13 11 28 1 30</file>
+                    <file> 34 42 19 26 29 6 2 39 35 38 43 16 14 31 1 33</file>
                 </tool>
             </inputs>
         </file>
@@ -161,7 +165,20 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 34 12</file>
+                    <file> 37 15</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 11</file>
                 </tool>
             </outputs>
         </file>
@@ -170,11 +187,11 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 10</file>
+                    <file> 13</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 29</file>
+                    <file> 32</file>
                 </tool>
             </outputs>
         </file>
@@ -183,7 +200,7 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 37</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
         </file>
@@ -192,16 +209,44 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 12</file>
+                    <file> 15</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 14 43 37 41 25 33 10 18 17 21 38</file>
+                    <file> 17 46 40 44 28 36 13 21 20 24 41</file>
                 </tool>
             </inputs>
         </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\system_stm32f4xx.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
     </configuration>
     <configuration>
         <name>Release</name>

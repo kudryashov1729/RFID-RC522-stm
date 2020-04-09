@@ -20,7 +20,20 @@
 
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
-	TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);
+        
+	//SPI 
+        /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);*/
+        LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
+        LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
+        LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
+        LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV256);//??????????
+        LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
+        LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
+        LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
+        LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
+        LL_SPI_EnableIT_RXNE(SPI1);
+        LL_SPI_Enable(SPI1);
+        __NVIC_EnableIRQ(SPI1_IRQn);
 
 	TM_MFRC522_Reset();
 
@@ -63,6 +76,7 @@ TM_MFRC522_Status_t TM_MFRC522_Compare(uint8_t* CardID, uint8_t* CompareID) {
 }
 
 void TM_MFRC522_InitPins(void) {
+  /**
 	GPIO_InitTypeDef GPIO_InitStruct;
 	//Enable clock
 	RCC_AHB1PeriphClockCmd(MFRC522_CS_RCC, ENABLE);
@@ -74,6 +88,7 @@ void TM_MFRC522_InitPins(void) {
 	//CS pin
 	GPIO_InitStruct.GPIO_Pin = MFRC522_CS_PIN;
 	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);	
+*/
 
 	MFRC522_CS_HIGH;
 }

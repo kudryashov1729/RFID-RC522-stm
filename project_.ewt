@@ -2390,4 +2390,7 @@
     <file>
         <name>$PROJ_DIR$\system_stm32f4xx.c</name>
     </file>
+    <file>
+        <name>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</name>
+    </file>
 </project>
