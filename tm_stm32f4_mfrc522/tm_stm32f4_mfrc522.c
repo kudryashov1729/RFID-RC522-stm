@@ -125,6 +125,7 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	//Send data	
 	/**TM_SPI_Send(MFRC522_SPI, val);*/
         LL_SPI_TransmitData8(SPI1, val);
+        
 	//CS high
 	MFRC522_CS_HIGH;
 }
@@ -137,6 +138,7 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
         LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
         
+
 	/**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
         LL_SPI_TransmitData8(SPI1, MFRC522_DUMMY);
         val = spi_resived_data;
