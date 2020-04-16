@@ -64,11 +64,11 @@
 /**
  * Includes
  */
-#include "stm32f4xx.h"
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
-#include "tm_stm32f4_spi.h"
-#include "defines.h"
+  #include "stm32f429xx.h"
+  #include "stm32f4xx_ll_bus.h"
+  #include "stm32f4xx_ll_spi.h"
+  #include "stm32f4xx_ll_rcc.h"
+  #include "stm32f4xx_ll_gpio.h"
 
 /**
  * Pinout
@@ -78,7 +78,7 @@
 /* Default SPI used */
 #ifndef MFRC522_SPI
 #define MFRC522_SPI						SPI1
-#define MFRC522_SPI_PINSPACK			TM_SPI_PinsPack_2
+#define MFRC522_SPI_PINSPACK			-1
 #endif
 
 /* Default CS pin used */
@@ -99,8 +99,11 @@ typedef enum {
 	MI_ERR
 } TM_MFRC522_Status_t;
 
-#define MFRC522_CS_LOW					MFRC522_CS_PORT->BSRRH = MFRC522_CS_PIN;
-#define MFRC522_CS_HIGH					MFRC522_CS_PORT->BSRRL = MFRC522_CS_PIN;
+/**#define MFRC522_CS_LOW					MFRC522_CS_PORT->BSRRH = MFRC522_CS_PIN;
+   #define MFRC522_CS_HIGH					MFRC522_CS_PORT->BSRRL = MFRC522_CS_PIN;*/
+
+#define MFRC522_CS_LOW					GPIOA->BSRR = GPIO_BSRR_BS4;
+#define MFRC522_CS_HIGH					GPIOA->BSRR = GPIO_BSRR_BR4;
 
 /* MFRC522 Commands */
 #define PCD_IDLE						0x00   //NO action; Cancel the current command

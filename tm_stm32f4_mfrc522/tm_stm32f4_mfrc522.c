@@ -18,6 +18,9 @@
  */
 #include "tm_stm32f4_mfrc522.h"
 
+
+volatile uint8_t spi_resived_data;
+
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
         
@@ -88,7 +91,26 @@ void TM_MFRC522_InitPins(void) {
 	//CS pin
 	GPIO_InitStruct.GPIO_Pin = MFRC522_CS_PIN;
 	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);	
-*/
+*/      
+        //CLOCKING
+        LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+        LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SPI1);
+        
+        //GPIO SETTING
+        //  AF5 SPI1_NSS  PA4
+        //  AF5 SPI1_SCK  PA5
+        //  AF5 SPI1_MISO PA6
+        //  AF5 SPI1_MOSI PA7
+        
+        
+        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_7, LL_GPIO_MODE_ALTERNATE);
+        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_6, LL_GPIO_MODE_ALTERNATE);
+        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_ALTERNATE);
+        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_5, LL_GPIO_MODE_ALTERNATE);
+        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_7, LL_GPIO_AF_5);
+        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_5);
+        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_4, LL_GPIO_AF_5);
+        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_5,LL_GPIO_AF_5);
 
 	MFRC522_CS_HIGH;
 }
@@ -97,9 +119,12 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	//CS low
 	MFRC522_CS_LOW;
 	//Send address
-	TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);
+        /**TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);*/
+        LL_SPI_TransmitData8(SPI1, (addr << 1) & 0x7E);
+	
 	//Send data	
-	TM_SPI_Send(MFRC522_SPI, val);
+	/**TM_SPI_Send(MFRC522_SPI, val);*/
+        LL_SPI_TransmitData8(SPI1, val);
 	//CS high
 	MFRC522_CS_HIGH;
 }
@@ -109,13 +134,22 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	//CS low
 	MFRC522_CS_LOW;
 
-	TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	
-	val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);
+	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
+        LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
+        
+	/**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
+        LL_SPI_TransmitData8(SPI1, MFRC522_DUMMY);
+        val = spi_resived_data;
 	//CS high
 	MFRC522_CS_HIGH;
 
 	return val;	
 }
+
+void SPI1_IRQHandler() {
+  spi_resived_data = LL_SPI_ReceiveData8(SPI1);
+}
+
 
 void TM_MFRC522_SetBitMask(uint8_t reg, uint8_t mask) {
 	TM_MFRC522_WriteRegister(reg, TM_MFRC522_ReadRegister(reg) | mask);
