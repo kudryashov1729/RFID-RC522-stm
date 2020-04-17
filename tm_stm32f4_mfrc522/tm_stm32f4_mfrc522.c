@@ -20,10 +20,10 @@
 
 
 volatile uint8_t spi_resived_data;
+volatile int flag;
 
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
-        
 	//SPI 
         /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);*/
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
@@ -121,11 +121,11 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	//Send address
         /**TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);*/
         LL_SPI_TransmitData8(SPI1, (addr << 1) & 0x7E);
-	
+	//for(int k = 0; k < 100000; k++){};
 	//Send data	
 	/**TM_SPI_Send(MFRC522_SPI, val);*/
         LL_SPI_TransmitData8(SPI1, val);
-        
+       // for(int k = 0; k < 100000; k++){};
 	//CS high
 	MFRC522_CS_HIGH;
 }
@@ -134,13 +134,17 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	uint8_t val;
 	//CS low
 	MFRC522_CS_LOW;
-
-	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
-        LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
         
+	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
+        flag = 1;
+        LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
+        while(flag){};
 
 	/**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
+        flag = 1;
         LL_SPI_TransmitData8(SPI1, MFRC522_DUMMY);
+        while(flag){};
+
         val = spi_resived_data;
 	//CS high
 	MFRC522_CS_HIGH;
@@ -150,6 +154,7 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 
 void SPI1_IRQHandler() {
   spi_resived_data = LL_SPI_ReceiveData8(SPI1);
+  flag = 0;
 }
 
 
