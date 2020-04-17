@@ -29,14 +29,14 @@ void TM_MFRC522_Init(void) {
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
         LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
         LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
-        LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV256);//??????????
+        //LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV2);//??????????
         LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
         LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
         LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
         LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
-        LL_SPI_EnableIT_RXNE(SPI1);
-        LL_SPI_Enable(SPI1);
-        __NVIC_EnableIRQ(SPI1_IRQn);
+        //LL_SPI_EnableIT_RXNE(SPI1);
+        //LL_SPI_Enable(SPI1);
+        //__NVIC_EnableIRQ(SPI1_IRQn);
 
 	TM_MFRC522_Reset();
 
@@ -136,25 +136,21 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	MFRC522_CS_LOW;
         
 	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
-        flag = 1;
         LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
-        while(flag){};
 
 	/**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
-        flag = 1;
         LL_SPI_TransmitData8(SPI1, MFRC522_DUMMY);
-        while(flag){};
-
-        val = spi_resived_data;
+        flag = 1;
+        while(flag){
+          flag = val == '\0';
+          val = LL_SPI_ReceiveData8(SPI1);
+        }
+       
+        
 	//CS high
 	MFRC522_CS_HIGH;
 
 	return val;	
-}
-
-void SPI1_IRQHandler() {
-  spi_resived_data = LL_SPI_ReceiveData8(SPI1);
-  flag = 0;
 }
 
 
