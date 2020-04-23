@@ -19,13 +19,11 @@
 #include "tm_stm32f4_mfrc522.h"
 
 
-volatile uint8_t spi_resived_data;
-
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
         
 	//SPI 
-        /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);*/
+        /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPAC);*/
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
         LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
         LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
@@ -34,24 +32,22 @@ void TM_MFRC522_Init(void) {
         LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
         LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
         LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
-        LL_SPI_EnableIT_RXNE(SPI1);
         LL_SPI_Enable(SPI1);
-        __NVIC_EnableIRQ(SPI1_IRQn);
 
 	TM_MFRC522_Reset();
-
+/*
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_PRESCALER, 0x3E);
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);
 
-	/* 48dB gain */
+	/* 48dB gain *//*
 	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
 	
 	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
 	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
-
-	TM_MFRC522_AntennaOn();		//Open the antenna
+*/
+	TM_MFRC522_AntennaOn();		//Open the antenna*/
 }
 
 TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
@@ -120,12 +116,17 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	MFRC522_CS_LOW;
 	//Send address
         /**TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);*/
+        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
         LL_SPI_TransmitData8(SPI1, (addr << 1) & 0x7E);
-	
+	while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
+        LL_SPI_ReceiveData8(SPI1);
+        
 	//Send data	
 	/**TM_SPI_Send(MFRC522_SPI, val);*/
+        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
         LL_SPI_TransmitData8(SPI1, val);
-        
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
+        LL_SPI_ReceiveData8(SPI1);
 	//CS high
 	MFRC522_CS_HIGH;
 }
@@ -136,22 +137,22 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	MFRC522_CS_LOW;
 
 	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
-        LL_SPI_TransmitData8(SPI1, ((addr << 1) & 0x7E) | 0x80);
+        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
+        LL_SPI_TransmitData8 (SPI1, (((addr << 1) & 0x7E) | 0x80));
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
+        LL_SPI_ReceiveData8(SPI1);
         
-
-	/**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
-        LL_SPI_TransmitData8(SPI1, MFRC522_DUMMY);
-        val = spi_resived_data;
+        /**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
+        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
+        LL_SPI_TransmitData8 (SPI1, MFRC522_DUMMY);
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
+        val = LL_SPI_ReceiveData8(SPI1);
+        
 	//CS high
 	MFRC522_CS_HIGH;
 
-	return val;	
+	return val;
 }
-
-void SPI1_IRQHandler() {
-  spi_resived_data = LL_SPI_ReceiveData8(SPI1);
-}
-
 
 void TM_MFRC522_SetBitMask(uint8_t reg, uint8_t mask) {
 	TM_MFRC522_WriteRegister(reg, TM_MFRC522_ReadRegister(reg) | mask);
