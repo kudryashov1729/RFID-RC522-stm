@@ -27,26 +27,26 @@ void TM_MFRC522_Init(void) {
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
         LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
         LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
-        LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV256);//??????????
+        LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV32);//??????????
         LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
         LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
         LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
         LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
         LL_SPI_Enable(SPI1);
 
-	TM_MFRC522_Reset();
-/*
-	TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);
-	TM_MFRC522_WriteRegister(MFRC522_REG_T_PRESCALER, 0x3E);
-	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           
-	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);
+//	TM_MFRC522_Reset();
+        
+//	TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);             //0x8D
+//	TM_MFRC522_WriteRegister(MFRC522_REG_T_PRESCALER, 0x3E);        //0x3E
+//	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           //30   
+//	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);            //0
+//
+//	/* 48dB gain */
+//	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
+//	
+//	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
+//	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
 
-	/* 48dB gain *//*
-	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
-	
-	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
-	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
-*/
 	TM_MFRC522_AntennaOn();		//Open the antenna*/
 }
 
@@ -107,8 +107,21 @@ void TM_MFRC522_InitPins(void) {
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_5);
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_4, LL_GPIO_AF_5);
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_5,LL_GPIO_AF_5);
+        
+//        LL_GPIO_SetPinSpeed(GPIOA, LL_GPIO_PIN_7, LL_GPIO_SPEED_FREQ_VERY_HIGH);
+//        LL_GPIO_SetPinSpeed(GPIOA, LL_GPIO_PIN_6, LL_GPIO_SPEED_FREQ_VERY_HIGH);
+//        LL_GPIO_SetPinSpeed(GPIOA, LL_GPIO_PIN_4, LL_GPIO_SPEED_FREQ_VERY_HIGH);
+//        LL_GPIO_SetPinSpeed(GPIOA, LL_GPIO_PIN_5, LL_GPIO_SPEED_FREQ_VERY_HIGH);
+        
+        /*
+LL_GPIO_SPEED_FREQ_LOW
+? LL_GPIO_SPEED_FREQ_MEDIUM
+? LL_GPIO_SPEED_FREQ_HIGH
+? LL_GPIO_SPEED_FREQ_VERY_HIGH
 
-	MFRC522_CS_HIGH;
+*/
+          
+        MFRC522_CS_HIGH;
 }
 
 void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {

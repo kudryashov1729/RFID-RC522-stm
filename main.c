@@ -20,6 +20,8 @@ void main()
 
   addr1 = 0x37;
   val_1 = TM_MFRC522_ReadRegister( addr1);
+  addr1 = 0x35;
+  val_1 = TM_MFRC522_ReadRegister( addr1);
   
 
   while(1){
