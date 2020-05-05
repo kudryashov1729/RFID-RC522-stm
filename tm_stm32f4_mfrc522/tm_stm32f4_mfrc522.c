@@ -34,18 +34,18 @@ void TM_MFRC522_Init(void) {
         LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
         LL_SPI_Enable(SPI1);
 
-//	TM_MFRC522_Reset();
+	TM_MFRC522_Reset();
         
-//	TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);             //0x8D
-//	TM_MFRC522_WriteRegister(MFRC522_REG_T_PRESCALER, 0x3E);        //0x3E
-//	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           //30   
-//	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);            //0
-//
-//	/* 48dB gain */
-//	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
-//	
-//	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
-//	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
+	TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);             //0x8D
+	TM_MFRC522_WriteRegister(MFRC522_REG_T_PRESCALER, 0x3E);        //0x3E
+	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           //30   
+	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);            //0
+
+	/* 48dB gain */
+	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
+	
+	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
+	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
 
 	TM_MFRC522_AntennaOn();		//Open the antenna*/
 }
