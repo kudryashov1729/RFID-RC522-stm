@@ -22,6 +22,7 @@
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
         
+        
 	//SPI 
         /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPAC);*/
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);

@@ -28,15 +28,22 @@ void main()
   TM_MFRC522_Init();
   led_init();
 
+  //TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);
   addr1 = 0x37;
   val_1 = TM_MFRC522_ReadRegister( addr1);
   addr1 = 0x35;
   val_1 = TM_MFRC522_ReadRegister( addr1);
+  addr1 = MFRC522_REG_SERIALSPEED; //0x1F
+  val_1 = TM_MFRC522_ReadRegister( addr1);
+  addr1 = MFRC522_REG_T_MODE; //0x2A
+  val_1 = TM_MFRC522_ReadRegister( addr1);
   
+  uint8_t CardID[5];
   
   uint8_t result;
   
   while(1) {
+    /*
     // Check card
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
@@ -51,11 +58,15 @@ void main()
     }
     
     // Check device
+    addr1 = MFRC522_REG_SERIALSPEED; //0x1F
+    val_1 = TM_MFRC522_ReadRegister( addr1);
+    addr1 = MFRC522_REG_T_MODE; //0x2A
+    val_1 = TM_MFRC522_ReadRegister( addr1);
     addr1 = 0x37;
     val_1 = TM_MFRC522_ReadRegister( addr1);
     addr1 = 0x35;
     val_1 = TM_MFRC522_ReadRegister( addr1);
-    if (val_1 == 0xEA)
+    if (val_1 == 0xA8)
     {
       LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_13);
     }
@@ -63,7 +74,13 @@ void main()
     {
       LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_13);
     }
-    
+    */
+    if (TM_MFRC522_Check(CardID) == MI_OK) {
+            //CardID is valid
+            LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_13);
+        } else {
+            LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_13);
+        }
   }
 };
 
