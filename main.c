@@ -76,11 +76,11 @@ void main()
     }
     */
     if (TM_MFRC522_Check(CardID) == MI_OK) {
-            //CardID is valid
-            LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_13);
-        } else {
-            LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_13);
-        }
+        //CardID is valid
+        LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_13);
+    } else {
+        LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_13);
+    }
   }
 };
 

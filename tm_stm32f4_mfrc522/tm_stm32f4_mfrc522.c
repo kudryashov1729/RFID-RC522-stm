@@ -32,7 +32,7 @@ void TM_MFRC522_Init(void) {
         LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
         LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
         LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
-        LL_SPI_SetNSSMode (SPI1, LL_SPI_NSS_HARD_OUTPUT);
+        LL_SPI_SetNSSMode(SPI1, LL_SPI_NSS_SOFT);
         LL_SPI_Enable(SPI1);
 
 	TM_MFRC522_Reset();
@@ -102,11 +102,10 @@ void TM_MFRC522_InitPins(void) {
         
         LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_7, LL_GPIO_MODE_ALTERNATE);
         LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_6, LL_GPIO_MODE_ALTERNATE);
-        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_ALTERNATE);
+        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_OUTPUT);
         LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_5, LL_GPIO_MODE_ALTERNATE);
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_7, LL_GPIO_AF_5);
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_5);
-        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_4, LL_GPIO_AF_5);
         LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_5,LL_GPIO_AF_5);
         
 //        LL_GPIO_SetPinSpeed(GPIOA, LL_GPIO_PIN_7, LL_GPIO_SPEED_FREQ_VERY_HIGH);
@@ -128,6 +127,7 @@ LL_GPIO_SPEED_FREQ_LOW
 void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	//CS low
 	MFRC522_CS_LOW;
+        
 	//Send address
         /**TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);*/
         while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
@@ -135,12 +135,16 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
 	while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
         LL_SPI_ReceiveData8(SPI1);
         
+        // Important! No NSS break here!
+        // Software slave select should be used or TransmitData16.
+        
 	//Send data	
 	/**TM_SPI_Send(MFRC522_SPI, val);*/
         while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
         LL_SPI_TransmitData8(SPI1, val);
         while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
         LL_SPI_ReceiveData8(SPI1);
+        
 	//CS high
 	MFRC522_CS_HIGH;
 }
@@ -149,12 +153,15 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	uint8_t val;
 	//CS low
 	MFRC522_CS_LOW;
-
+        
 	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
         while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
         LL_SPI_TransmitData8 (SPI1, (((addr << 1) & 0x7E) | 0x80));
         while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
         LL_SPI_ReceiveData8(SPI1);
+        
+        // Important! No NSS break here!
+        // Software slave select should be used or TransmitData16.
         
         /**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
         while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
