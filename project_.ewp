@@ -226,6 +226,8 @@
                     <name>CCDefines</name>
                     <state>STM32F429xx</state>
                     <state>USE_FULL_LL_DRIVER</state>
+                    <state>USE_STM32F429_DISCO</state>
+                    <state>USE_HAL_DRIVER</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -351,7 +353,8 @@
                 <option>
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\tm_stm32f4_mfrc522</state>
-                    <state>$PROJ_DIR$\Inc</state>
+                    <state>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc</state>
+                    <state>$PROJ_DIR$\Drivers\BSP\STM32F429I-Discovery</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -651,7 +654,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>project_.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -766,7 +769,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
@@ -1119,7 +1122,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>7.50.2.0</state>
+                    <state>8.40.1.21529</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -1131,7 +1134,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state></state>
+                    <state>Default	None</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -1165,7 +1168,7 @@
                 </option>
                 <option>
                     <name>RTConfigPath2</name>
-                    <state></state>
+                    <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
@@ -1191,7 +1194,7 @@
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state></state>
+                    <state>Default	None</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -1386,7 +1389,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -1652,7 +1655,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -2106,27 +2109,87 @@
         </settings>
     </configuration>
     <group>
+        <name>BSP</name>
+        <group>
+            <name>Components</name>
+            <file>
+                <name>$PROJ_DIR$\Drivers\BSP\Components\ili9341\ili9341.c</name>
+            </file>
+        </group>
+        <file>
+            <name>$PROJ_DIR$\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_lcd.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\BSP\STM32F429I-Discovery\stm32f429i_discovery_sdram.c</name>
+        </file>
+    </group>
+    <group>
+        <name>Custom</name>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\stm32f4xx_it.c</name>
+        </file>
+    </group>
+    <group>
+        <name>HAL</name>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma2d.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_ltdc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sdram.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fmc.c</name>
+        </file>
+    </group>
+    <group>
         <name>LL</name>
         <file>
-            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_gpio.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+            <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c</name>
         </file>
     </group>
     <file>
-        <name>$PROJ_DIR$\main.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\system_stm32f4xx.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</name>
     </file>
 </project>

@@ -1,0 +1,2342 @@
+[
+  {
+    "ID": "c:@addr1",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "addr1",
+    "location": {
+      "column": "9",
+      "line": "18",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\main.c"
+    },
+    "name": "addr1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@val_1",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "val_1",
+    "location": {
+      "column": "18",
+      "line": "19",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\main.c"
+    },
+    "name": "val_1",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@led_init",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void led_init(void)",
+    "location": {
+      "column": "6",
+      "line": "22",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\main.c"
+    },
+    "name": "led_init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void main(void)",
+    "location": {
+      "column": "6",
+      "line": "29",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@NMI_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void NMI_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "67",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "NMI_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@HardFault_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void HardFault_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "76",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "HardFault_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@MemManage_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void MemManage_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "89",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "MemManage_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@BusFault_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void BusFault_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "102",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "BusFault_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UsageFault_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void UsageFault_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "115",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "UsageFault_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SVC_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SVC_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "128",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "SVC_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@DebugMon_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void DebugMon_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "137",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "DebugMon_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@PendSV_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void PendSV_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "146",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "PendSV_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SysTick_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SysTick_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "155",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\stm32f4xx_it.c"
+    },
+    "name": "SysTick_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f4xx.c@3160@macro@HSE_VALUE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "HSE_VALUE",
+    "location": {
+      "column": "11",
+      "line": "68",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "HSE_VALUE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f4xx.c@3313@macro@HSI_VALUE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "HSI_VALUE",
+    "location": {
+      "column": "11",
+      "line": "72",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "HSI_VALUE",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f4xx.c@4730@macro@VECT_TAB_OFFSET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "VECT_TAB_OFFSET",
+    "location": {
+      "column": "9",
+      "line": "109",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "VECT_TAB_OFFSET",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@SystemCoreClock",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "SystemCoreClock",
+    "location": {
+      "column": "10",
+      "line": "136",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "SystemCoreClock",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@AHBPrescTable",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "AHBPrescTable",
+    "location": {
+      "column": "15",
+      "line": "137",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "AHBPrescTable",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@APBPrescTable",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "APBPrescTable",
+    "location": {
+      "column": "15",
+      "line": "138",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "APBPrescTable",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SystemInit",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SystemInit(void)",
+    "location": {
+      "column": "6",
+      "line": "166",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "SystemInit",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@SystemCoreClockUpdate",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SystemCoreClockUpdate(void)",
+    "location": {
+      "column": "6",
+      "line": "239",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\system_stm32f4xx.c"
+    },
+    "name": "SystemCoreClockUpdate",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@1996@macro@TM_MFRC522_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "TM_MFRC522_H",
+    "location": {
+      "column": "9",
+      "line": "55",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2440@macro@MFRC522_SPI",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_SPI",
+    "location": {
+      "column": "9",
+      "line": "80",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_SPI",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2471@macro@MFRC522_SPI_PINSPACK",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_SPI_PINSPACK",
+    "location": {
+      "column": "9",
+      "line": "81",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_SPI_PINSPACK",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2567@macro@MFRC522_CS_RCC",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_CS_RCC",
+    "location": {
+      "column": "9",
+      "line": "86",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_CS_RCC",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2616@macro@MFRC522_CS_PORT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_CS_PORT",
+    "location": {
+      "column": "9",
+      "line": "87",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_CS_PORT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2651@macro@MFRC522_CS_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_CS_PIN",
+    "location": {
+      "column": "9",
+      "line": "88",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_CS_PIN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@EA@TM_MFRC522_Status_t",
+    "What": "Enum",
+    "defdec": "Def",
+    "display": "",
+    "fields": [
+      {
+        "ID": "c:@EA@TM_MFRC522_Status_t@MI_OK",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "MI_OK",
+        "location": {
+          "column": "2",
+          "line": "97",
+          "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+        },
+        "name": "MI_OK",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@TM_MFRC522_Status_t@MI_NOTAGERR",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "MI_NOTAGERR",
+        "location": {
+          "column": "2",
+          "line": "98",
+          "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+        },
+        "name": "MI_NOTAGERR",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@TM_MFRC522_Status_t@MI_ERR",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "MI_ERR",
+        "location": {
+          "column": "2",
+          "line": "99",
+          "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+        },
+        "name": "MI_ERR",
+        "origin": "user_include",
+        "scope": null
+      }
+    ],
+    "location": {
+      "column": "9",
+      "line": "96",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@2994@macro@MFRC522_CS_LOW",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_CS_LOW",
+    "location": {
+      "column": "9",
+      "line": "105",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_CS_LOW",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3051@macro@MFRC522_CS_HIGH",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_CS_HIGH",
+    "location": {
+      "column": "9",
+      "line": "106",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_CS_HIGH",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3135@macro@PCD_IDLE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_IDLE",
+    "location": {
+      "column": "9",
+      "line": "109",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_IDLE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3205@macro@PCD_AUTHENT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_AUTHENT",
+    "location": {
+      "column": "9",
+      "line": "110",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_AUTHENT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3259@macro@PCD_RECEIVE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_RECEIVE",
+    "location": {
+      "column": "9",
+      "line": "111",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_RECEIVE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3307@macro@PCD_TRANSMIT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_TRANSMIT",
+    "location": {
+      "column": "9",
+      "line": "112",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_TRANSMIT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3356@macro@PCD_TRANSCEIVE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_TRANSCEIVE",
+    "location": {
+      "column": "9",
+      "line": "113",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_TRANSCEIVE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3420@macro@PCD_RESETPHASE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_RESETPHASE",
+    "location": {
+      "column": "9",
+      "line": "114",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_RESETPHASE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3463@macro@PCD_CALCCRC",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PCD_CALCCRC",
+    "location": {
+      "column": "9",
+      "line": "115",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PCD_CALCCRC",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3550@macro@PICC_REQIDL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_REQIDL",
+    "location": {
+      "column": "9",
+      "line": "118",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_REQIDL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3635@macro@PICC_REQALL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_REQALL",
+    "location": {
+      "column": "9",
+      "line": "119",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_REQALL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3703@macro@PICC_ANTICOLL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_ANTICOLL",
+    "location": {
+      "column": "9",
+      "line": "120",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_ANTICOLL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3755@macro@PICC_SElECTTAG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_SElECTTAG",
+    "location": {
+      "column": "9",
+      "line": "121",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_SElECTTAG",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3807@macro@PICC_AUTHENT1A",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_AUTHENT1A",
+    "location": {
+      "column": "9",
+      "line": "122",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_AUTHENT1A",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3866@macro@PICC_AUTHENT1B",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_AUTHENT1B",
+    "location": {
+      "column": "9",
+      "line": "123",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_AUTHENT1B",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3925@macro@PICC_READ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_READ",
+    "location": {
+      "column": "9",
+      "line": "124",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_READ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@3970@macro@PICC_WRITE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_WRITE",
+    "location": {
+      "column": "9",
+      "line": "125",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_WRITE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4017@macro@PICC_DECREMENT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_DECREMENT",
+    "location": {
+      "column": "9",
+      "line": "126",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_DECREMENT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4061@macro@PICC_INCREMENT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_INCREMENT",
+    "location": {
+      "column": "9",
+      "line": "127",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_INCREMENT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4108@macro@PICC_RESTORE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_RESTORE",
+    "location": {
+      "column": "9",
+      "line": "128",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_RESTORE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4178@macro@PICC_TRANSFER",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_TRANSFER",
+    "location": {
+      "column": "9",
+      "line": "129",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_TRANSFER",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4243@macro@PICC_HALT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "PICC_HALT",
+    "location": {
+      "column": "9",
+      "line": "130",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "PICC_HALT",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4340@macro@MFRC522_REG_RESERVED00",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED00",
+    "location": {
+      "column": "9",
+      "line": "134",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED00",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4383@macro@MFRC522_REG_COMMAND",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_COMMAND",
+    "location": {
+      "column": "9",
+      "line": "135",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_COMMAND",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4424@macro@MFRC522_REG_COMM_IE_N",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_COMM_IE_N",
+    "location": {
+      "column": "9",
+      "line": "136",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_COMM_IE_N",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4466@macro@MFRC522_REG_DIV1_EN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_DIV1_EN",
+    "location": {
+      "column": "9",
+      "line": "137",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_DIV1_EN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4507@macro@MFRC522_REG_COMM_IRQ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_COMM_IRQ",
+    "location": {
+      "column": "9",
+      "line": "138",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_COMM_IRQ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4548@macro@MFRC522_REG_DIV_IRQ",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_DIV_IRQ",
+    "location": {
+      "column": "9",
+      "line": "139",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_DIV_IRQ",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4585@macro@MFRC522_REG_ERROR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_ERROR",
+    "location": {
+      "column": "9",
+      "line": "140",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_ERROR",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4624@macro@MFRC522_REG_STATUS1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_STATUS1",
+    "location": {
+      "column": "9",
+      "line": "141",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_STATUS1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4665@macro@MFRC522_REG_STATUS2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_STATUS2",
+    "location": {
+      "column": "9",
+      "line": "142",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_STATUS2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4706@macro@MFRC522_REG_FIFO_DATA",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_FIFO_DATA",
+    "location": {
+      "column": "9",
+      "line": "143",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_FIFO_DATA",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4744@macro@MFRC522_REG_FIFO_LEVEL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_FIFO_LEVEL",
+    "location": {
+      "column": "9",
+      "line": "144",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_FIFO_LEVEL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4783@macro@MFRC522_REG_WATER_LEVEL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_WATER_LEVEL",
+    "location": {
+      "column": "9",
+      "line": "145",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_WATER_LEVEL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4823@macro@MFRC522_REG_CONTROL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_CONTROL",
+    "location": {
+      "column": "9",
+      "line": "146",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_CONTROL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4860@macro@MFRC522_REG_BIT_FRAMING",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_BIT_FRAMING",
+    "location": {
+      "column": "9",
+      "line": "147",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_BIT_FRAMING",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4900@macro@MFRC522_REG_COLL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_COLL",
+    "location": {
+      "column": "9",
+      "line": "148",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_COLL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4934@macro@MFRC522_REG_RESERVED01",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED01",
+    "location": {
+      "column": "9",
+      "line": "149",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED01",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@4993@macro@MFRC522_REG_RESERVED10",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED10",
+    "location": {
+      "column": "9",
+      "line": "151",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED10",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5032@macro@MFRC522_REG_MODE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_MODE",
+    "location": {
+      "column": "9",
+      "line": "152",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_MODE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5066@macro@MFRC522_REG_TX_MODE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TX_MODE",
+    "location": {
+      "column": "9",
+      "line": "153",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TX_MODE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5103@macro@MFRC522_REG_RX_MODE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RX_MODE",
+    "location": {
+      "column": "9",
+      "line": "154",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RX_MODE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5140@macro@MFRC522_REG_TX_CONTROL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TX_CONTROL",
+    "location": {
+      "column": "9",
+      "line": "155",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TX_CONTROL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5179@macro@MFRC522_REG_TX_AUTO",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TX_AUTO",
+    "location": {
+      "column": "9",
+      "line": "156",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TX_AUTO",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5216@macro@MFRC522_REG_TX_SELL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TX_SELL",
+    "location": {
+      "column": "9",
+      "line": "157",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TX_SELL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5253@macro@MFRC522_REG_RX_SELL",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RX_SELL",
+    "location": {
+      "column": "9",
+      "line": "158",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RX_SELL",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5290@macro@MFRC522_REG_RX_THRESHOLD",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RX_THRESHOLD",
+    "location": {
+      "column": "9",
+      "line": "159",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RX_THRESHOLD",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5330@macro@MFRC522_REG_DEMOD",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_DEMOD",
+    "location": {
+      "column": "9",
+      "line": "160",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_DEMOD",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5365@macro@MFRC522_REG_RESERVED11",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED11",
+    "location": {
+      "column": "9",
+      "line": "161",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED11",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5404@macro@MFRC522_REG_RESERVED12",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED12",
+    "location": {
+      "column": "9",
+      "line": "162",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED12",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5443@macro@MFRC522_REG_MIFARE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_MIFARE",
+    "location": {
+      "column": "9",
+      "line": "163",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_MIFARE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5479@macro@MFRC522_REG_RESERVED13",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED13",
+    "location": {
+      "column": "9",
+      "line": "164",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED13",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5518@macro@MFRC522_REG_RESERVED14",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED14",
+    "location": {
+      "column": "9",
+      "line": "165",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED14",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5557@macro@MFRC522_REG_SERIALSPEED",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_SERIALSPEED",
+    "location": {
+      "column": "9",
+      "line": "166",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_SERIALSPEED",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5616@macro@MFRC522_REG_RESERVED20",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED20",
+    "location": {
+      "column": "9",
+      "line": "168",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED20",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5657@macro@MFRC522_REG_CRC_RESULT_M",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_CRC_RESULT_M",
+    "location": {
+      "column": "9",
+      "line": "169",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_CRC_RESULT_M",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5697@macro@MFRC522_REG_CRC_RESULT_L",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_CRC_RESULT_L",
+    "location": {
+      "column": "9",
+      "line": "170",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_CRC_RESULT_L",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5737@macro@MFRC522_REG_RESERVED21",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED21",
+    "location": {
+      "column": "9",
+      "line": "171",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED21",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5776@macro@MFRC522_REG_MOD_WIDTH",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_MOD_WIDTH",
+    "location": {
+      "column": "9",
+      "line": "172",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_MOD_WIDTH",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5814@macro@MFRC522_REG_RESERVED22",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED22",
+    "location": {
+      "column": "9",
+      "line": "173",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED22",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5853@macro@MFRC522_REG_RF_CFG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RF_CFG",
+    "location": {
+      "column": "9",
+      "line": "174",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RF_CFG",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5889@macro@MFRC522_REG_GS_N",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_GS_N",
+    "location": {
+      "column": "9",
+      "line": "175",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_GS_N",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5923@macro@MFRC522_REG_CWGS_PREG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_CWGS_PREG",
+    "location": {
+      "column": "9",
+      "line": "176",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_CWGS_PREG",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@5961@macro@MFRC522_REG__MODGS_PREG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG__MODGS_PREG",
+    "location": {
+      "column": "9",
+      "line": "177",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG__MODGS_PREG",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6001@macro@MFRC522_REG_T_MODE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_MODE",
+    "location": {
+      "column": "9",
+      "line": "178",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_MODE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6037@macro@MFRC522_REG_T_PRESCALER",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_PRESCALER",
+    "location": {
+      "column": "9",
+      "line": "179",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_PRESCALER",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6077@macro@MFRC522_REG_T_RELOAD_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_RELOAD_H",
+    "location": {
+      "column": "9",
+      "line": "180",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_RELOAD_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6116@macro@MFRC522_REG_T_RELOAD_L",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_RELOAD_L",
+    "location": {
+      "column": "9",
+      "line": "181",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_RELOAD_L",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6155@macro@MFRC522_REG_T_COUNTER_VALUE_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_COUNTER_VALUE_H",
+    "location": {
+      "column": "9",
+      "line": "182",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_COUNTER_VALUE_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6199@macro@MFRC522_REG_T_COUNTER_VALUE_L",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_T_COUNTER_VALUE_L",
+    "location": {
+      "column": "9",
+      "line": "183",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_T_COUNTER_VALUE_L",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6267@macro@MFRC522_REG_RESERVED30",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED30",
+    "location": {
+      "column": "9",
+      "line": "185",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED30",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6306@macro@MFRC522_REG_TEST_SEL1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_SEL1",
+    "location": {
+      "column": "9",
+      "line": "186",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_SEL1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6344@macro@MFRC522_REG_TEST_SEL2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_SEL2",
+    "location": {
+      "column": "9",
+      "line": "187",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_SEL2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6382@macro@MFRC522_REG_TEST_PIN_EN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_PIN_EN",
+    "location": {
+      "column": "9",
+      "line": "188",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_PIN_EN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6422@macro@MFRC522_REG_TEST_PIN_VALUE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_PIN_VALUE",
+    "location": {
+      "column": "9",
+      "line": "189",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_PIN_VALUE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6464@macro@MFRC522_REG_TEST_BUS",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_BUS",
+    "location": {
+      "column": "9",
+      "line": "190",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_BUS",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6501@macro@MFRC522_REG_AUTO_TEST",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_AUTO_TEST",
+    "location": {
+      "column": "9",
+      "line": "191",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_AUTO_TEST",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6539@macro@MFRC522_REG_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_VERSION",
+    "location": {
+      "column": "9",
+      "line": "192",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6576@macro@MFRC522_REG_ANALOG_TEST",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_ANALOG_TEST",
+    "location": {
+      "column": "9",
+      "line": "193",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_ANALOG_TEST",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6616@macro@MFRC522_REG_TEST_ADC1",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_ADC1",
+    "location": {
+      "column": "9",
+      "line": "194",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_ADC1",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6656@macro@MFRC522_REG_TEST_ADC2",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_ADC2",
+    "location": {
+      "column": "9",
+      "line": "195",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_ADC2",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6697@macro@MFRC522_REG_TEST_ADC0",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_TEST_ADC0",
+    "location": {
+      "column": "9",
+      "line": "196",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_TEST_ADC0",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6738@macro@MFRC522_REG_RESERVED31",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED31",
+    "location": {
+      "column": "9",
+      "line": "197",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED31",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6780@macro@MFRC522_REG_RESERVED32",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED32",
+    "location": {
+      "column": "9",
+      "line": "198",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED32",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6819@macro@MFRC522_REG_RESERVED33",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED33",
+    "location": {
+      "column": "9",
+      "line": "199",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED33",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6861@macro@MFRC522_REG_RESERVED34",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_REG_RESERVED34",
+    "location": {
+      "column": "9",
+      "line": "200",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_REG_RESERVED34",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6914@macro@MFRC522_DUMMY",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_DUMMY",
+    "location": {
+      "column": "9",
+      "line": "202",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_DUMMY",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.h@6948@macro@MFRC522_MAX_LEN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MFRC522_MAX_LEN",
+    "location": {
+      "column": "9",
+      "line": "204",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "MFRC522_MAX_LEN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_Init(void)",
+    "location": {
+      "column": "13",
+      "line": "215",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Check",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Check(int *)",
+    "location": {
+      "column": "28",
+      "line": "227",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Check",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Compare",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Compare(int *, int *)",
+    "location": {
+      "column": "28",
+      "line": "241",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Compare",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_InitPins",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_InitPins(void)",
+    "location": {
+      "column": "13",
+      "line": "246",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_InitPins",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_WriteRegister",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_WriteRegister(int, int)",
+    "location": {
+      "column": "13",
+      "line": "247",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_WriteRegister",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ReadRegister",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int TM_MFRC522_ReadRegister(int)",
+    "location": {
+      "column": "16",
+      "line": "248",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_ReadRegister",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_SetBitMask",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_SetBitMask(int, int)",
+    "location": {
+      "column": "13",
+      "line": "249",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_SetBitMask",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ClearBitMask",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_ClearBitMask(int, int)",
+    "location": {
+      "column": "13",
+      "line": "250",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_ClearBitMask",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_AntennaOn",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_AntennaOn(void)",
+    "location": {
+      "column": "13",
+      "line": "251",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_AntennaOn",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_AntennaOff",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_AntennaOff(void)",
+    "location": {
+      "column": "13",
+      "line": "252",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_AntennaOff",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Reset",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_Reset(void)",
+    "location": {
+      "column": "13",
+      "line": "253",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Reset",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Request",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Request(int, int *)",
+    "location": {
+      "column": "28",
+      "line": "254",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Request",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ToCard",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_ToCard(int, int *, int, int *, int *)",
+    "location": {
+      "column": "28",
+      "line": "255",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_ToCard",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Anticoll",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Anticoll(int *)",
+    "location": {
+      "column": "28",
+      "line": "256",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Anticoll",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_CalculateCRC",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_CalculateCRC(int *, int, int *)",
+    "location": {
+      "column": "13",
+      "line": "257",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_CalculateCRC",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_SelectTag",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int TM_MFRC522_SelectTag(int *)",
+    "location": {
+      "column": "16",
+      "line": "258",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_SelectTag",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Auth",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Auth(int, int, int *, int *)",
+    "location": {
+      "column": "28",
+      "line": "259",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Auth",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Read",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Read(int, int *)",
+    "location": {
+      "column": "28",
+      "line": "260",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Read",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Write",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Write(int, int *)",
+    "location": {
+      "column": "28",
+      "line": "261",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Write",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Halt",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TM_MFRC522_Halt(void)",
+    "location": {
+      "column": "13",
+      "line": "262",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.h"
+    },
+    "name": "TM_MFRC522_Halt",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Init",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_Init(void)",
+    "location": {
+      "column": "6",
+      "line": "22",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Check",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Check(int *)",
+    "location": {
+      "column": "21",
+      "line": "54",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Check",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@2231@F@TM_MFRC522_Check@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "55",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Compare",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Compare(int *, int *)",
+    "location": {
+      "column": "21",
+      "line": "68",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Compare",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_InitPins",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_InitPins(void)",
+    "location": {
+      "column": "6",
+      "line": "78",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_InitPins",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_WriteRegister",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_WriteRegister(int, int)",
+    "location": {
+      "column": "6",
+      "line": "127",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_WriteRegister",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ReadRegister",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int TM_MFRC522_ReadRegister(int)",
+    "location": {
+      "column": "9",
+      "line": "152",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_ReadRegister",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_SetBitMask",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_SetBitMask(int, int)",
+    "location": {
+      "column": "6",
+      "line": "178",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_SetBitMask",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ClearBitMask",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_ClearBitMask(int, int)",
+    "location": {
+      "column": "6",
+      "line": "182",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_ClearBitMask",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_AntennaOn",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_AntennaOn(void)",
+    "location": {
+      "column": "6",
+      "line": "186",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_AntennaOn",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_AntennaOff",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_AntennaOff(void)",
+    "location": {
+      "column": "6",
+      "line": "195",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_AntennaOff",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Reset",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_Reset(void)",
+    "location": {
+      "column": "6",
+      "line": "199",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Reset",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Request",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Request(int, int *)",
+    "location": {
+      "column": "21",
+      "line": "203",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Request",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@6902@F@TM_MFRC522_Request@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "204",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_ToCard",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_ToCard(int, int *, int, int *, int *)",
+    "location": {
+      "column": "21",
+      "line": "219",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_ToCard",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@7423@F@TM_MFRC522_ToCard@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "220",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Anticoll",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Anticoll(int *)",
+    "location": {
+      "column": "21",
+      "line": "306",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Anticoll",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@9680@F@TM_MFRC522_Anticoll@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "307",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_CalculateCRC",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_CalculateCRC(int *, int, int *)",
+    "location": {
+      "column": "6",
+      "line": "330",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_CalculateCRC",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_SelectTag",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int TM_MFRC522_SelectTag(int *)",
+    "location": {
+      "column": "9",
+      "line": "355",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_SelectTag",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@11104@F@TM_MFRC522_SelectTag@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "357",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Auth",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Auth(int, int, int *, int *)",
+    "location": {
+      "column": "21",
+      "line": "379",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Auth",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@11685@F@TM_MFRC522_Auth@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "380",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Read",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Read(int, int *)",
+    "location": {
+      "column": "21",
+      "line": "403",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Read",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@12318@F@TM_MFRC522_Read@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "404",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Write",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "TM_MFRC522_Status_t TM_MFRC522_Write(int, int *)",
+    "location": {
+      "column": "21",
+      "line": "419",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Write",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:tm_stm32f4_mfrc522.c@12727@F@TM_MFRC522_Write@status",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "status",
+    "location": {
+      "column": "22",
+      "line": "420",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "status",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TM_MFRC522_Halt",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TM_MFRC522_Halt(void)",
+    "location": {
+      "column": "6",
+      "line": "450",
+      "path": "D:\\Workspaces_stm32_\\Project SPI MFRC522\\tm_stm32f4_mfrc522\\tm_stm32f4_mfrc522.c"
+    },
+    "name": "TM_MFRC522_Halt",
+    "origin": "project_file",
+    "scope": null
+  }
+]
