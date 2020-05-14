@@ -22,9 +22,9 @@
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
         
-        
+        /*
 	//SPI 
-        /**SETTING TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPAC);*/
+
         LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
         LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
         LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
@@ -42,13 +42,14 @@ void TM_MFRC522_Init(void) {
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_L, 30);           //30   
 	TM_MFRC522_WriteRegister(MFRC522_REG_T_RELOAD_H, 0);            //0
 
-	/* 48dB gain */
+	// 48dB gain 
 	TM_MFRC522_WriteRegister(MFRC522_REG_RF_CFG, 0x70);
 	
 	TM_MFRC522_WriteRegister(MFRC522_REG_TX_AUTO, 0x40);
 	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
 
-	TM_MFRC522_AntennaOn();		//Open the antenna*/
+	TM_MFRC522_AntennaOn();		//Open the antenna
+        */
 }
 
 TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
@@ -89,26 +90,26 @@ void TM_MFRC522_InitPins(void) {
 	GPIO_InitStruct.GPIO_Pin = MFRC522_CS_PIN;
 	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);	
 */      
-        //CLOCKING
-        LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
-        LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SPI1);
+        //GPIO SETTING for SPI2
+        //  AF5 SPI1_NSS  PB12
+        //  AF5 SPI1_SCK  PB13
+        //  AF5 SPI1_MISO PB14
+        //  AF5 SPI1_MOSI PB15
+        __HAL_RCC_GPIOB_CLK_ENABLE();
         
-        //GPIO SETTING
-        //  AF5 SPI1_NSS  PA4
-        //  AF5 SPI1_SCK  PA5
-        //  AF5 SPI1_MISO PA6
-        //  AF5 SPI1_MOSI PA7
+        GPIO_InitTypeDef GPIO_Init_for_SPI2;
+        GPIO_Init_for_SPI2.Pin = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
+        GPIO_Init_for_SPI2.Mode = GPIO_MODE_AF_PP;
+        GPIO_Init_for_SPI2.Alternate = GPIO_AF5_SPI2;
+        HAL_GPIO_Init(GPIOB, &GPIO_Init_for_SPI2);
         
+        //NSS SETTING
+        GPIO_InitTypeDef GPIO_Init_for_SPI2_NSS;
+        GPIO_Init_for_SPI2_NSS.Pin = GPIO_PIN_12;
+        GPIO_Init_for_SPI2_NSS.Speed = GPIO_SPEED_FREQ_MEDIUM;
+        GPIO_Init_for_SPI2_NSS.Pull = GPIO_NOPULL;
+        HAL_GPIO_Init(GPIOB, &GPIO_Init_for_SPI2_NSS);
         
-        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_7, LL_GPIO_MODE_ALTERNATE);
-        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_6, LL_GPIO_MODE_ALTERNATE);
-        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_4, LL_GPIO_MODE_OUTPUT);
-        LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_5, LL_GPIO_MODE_ALTERNATE);
-        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_7, LL_GPIO_AF_5);
-        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_6, LL_GPIO_AF_5);
-        LL_GPIO_SetAFPin_0_7(GPIOA, LL_GPIO_PIN_5,LL_GPIO_AF_5);
-        
-          
         MFRC522_CS_HIGH;
 }
 

@@ -13,39 +13,60 @@
 
 static void SystemClock_Config(void);
 
-//GPIO SETTING
-        //  AF5 SPI1_NSS  PA4
-        //  AF5 SPI1_SCK  PA5
-        //  AF5 SPI1_MISO PA6
-        //  AF5 SPI1_MOSI PA7
+//GPIO SETTING for SPI2
+        //  AF5 SPI1_NSS  PB12
+        //  AF5 SPI1_SCK  PB13
+        //  AF5 SPI1_MISO PB14
+        //  AF5 SPI1_MOSI PB15
 uint8_t addr1, card_id[5];
 volatile uint8_t val_1 = 1, card_is_here = 0;
  
 
 void led_init(void)
 {
+  /*
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOG);
   LL_GPIO_SetPinMode(GPIOG, LL_GPIO_PIN_13, LL_GPIO_MODE_OUTPUT);
   LL_GPIO_SetPinMode(GPIOG, LL_GPIO_PIN_14, LL_GPIO_MODE_OUTPUT);
+*/
 }
   
 void main()
 {
-  /**
+ 
   HAL_Init();
   //Appropriate clock configuration
   SystemClock_Config();
   //Display initialization
   BSP_LCD_Init();
-  
   BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER, LCD_FRAME_BUFFER);
   BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);
   BSP_LCD_DisplayOn();
-  */
+  
   
   TM_MFRC522_Init(); //Initialize MFRC522 RFID
   led_init();
-
+  
+  BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
+  BSP_LCD_SetBackColor(LCD_COLOR_WHITE);//Choose background color
+  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);//Set work color, not only for text
+  //Hello MSU
+  BSP_LCD_DisplayStringAt(20, 10, "Hello MSU!", LEFT_MODE);
+  //Draw Russian flag
+  BSP_LCD_DrawRect(40, 40, 150, 40);
+  BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+  BSP_LCD_FillRect(40, 80, 150, 40);
+  BSP_LCD_SetTextColor(LCD_COLOR_RED);
+  BSP_LCD_FillRect(40, 120, 150, 40);
+  //Write several lines
+  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+  char str[10];
+  for(int i = 7; i<12; i++)
+  {
+  sprintf(str, "Line %d", i);
+  BSP_LCD_DisplayStringAtLine(i, str);
+  }
+/*
   //TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);
   addr1 = 0x37;
   val_1 = TM_MFRC522_ReadRegister( addr1);
@@ -55,13 +76,14 @@ void main()
   val_1 = TM_MFRC522_ReadRegister( addr1);
   addr1 = MFRC522_REG_T_MODE; //0x2A
   val_1 = TM_MFRC522_ReadRegister( addr1);
-  
+  */
   uint8_t CardID[5];
   
   uint8_t result;
   
   while(1) {
     // Check card
+    /*
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
     {
@@ -72,7 +94,7 @@ void main()
     {
       card_is_here = 0;
       LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_14);
-    }
+    }*/
   }
 };
 
