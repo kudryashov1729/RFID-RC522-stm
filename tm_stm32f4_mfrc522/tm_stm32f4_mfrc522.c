@@ -156,9 +156,10 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
         
         /**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
         while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
-        LL_SPI_TransmitData8 (SPI2, MFRC522_DUMMY);
+        //LL_SPI_TransmitData8 (SPI2, MFRC522_DUMMY);
+        LL_SPI_TransmitData8 (SPI2, MFRC522_REG_T_MODE);
         while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
-         LL_SPI_ReceiveData8(SPI2);
+        val = LL_SPI_ReceiveData8(SPI2);
         
 	//CS high
 	MFRC522_CS_HIGH;
