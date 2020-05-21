@@ -20,15 +20,18 @@ static void SystemClock_Config(void);
         //  AF5 SPI1_MOSI PB15
 uint8_t addr1, card_id[5];
 volatile uint8_t val_1 = 1, card_is_here = 0;
+
+uint8_t _blockAddr;
+uint8_t Data [100];
  
 
 void led_init(void)
 {
-  /*
-  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOG);
-  LL_GPIO_SetPinMode(GPIOG, LL_GPIO_PIN_13, LL_GPIO_MODE_OUTPUT);
-  LL_GPIO_SetPinMode(GPIOG, LL_GPIO_PIN_14, LL_GPIO_MODE_OUTPUT);
-*/
+  GPIO_InitTypeDef GPIOG_Init_led;
+  
+  GPIOG_Init_led.Pin = (GPIO_PIN_13 | GPIO_PIN_14);
+  GPIOG_Init_led.Mode = GPIO_MODE_OUTPUT_PP;
+  HAL_GPIO_Init(GPIOG, &GPIOG_Init_led);
 }
   
 void main()
@@ -81,6 +84,10 @@ void main()
   
   uint8_t result;
   
+  _blockAddr = 0;
+  
+  
+  
   while(1) {
     // Check card
     
@@ -89,11 +96,14 @@ void main()
     {
       card_is_here = 1;
       //LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_14);
+      HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
+      TM_MFRC522_Read( _blockAddr, Data);
     }
     else  
     {
       card_is_here = 0;
       //LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_14);
+      HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
     }
   }
 };
