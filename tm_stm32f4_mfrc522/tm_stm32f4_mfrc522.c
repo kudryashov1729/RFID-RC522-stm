@@ -22,18 +22,18 @@
 void TM_MFRC522_Init(void) {
 	TM_MFRC522_InitPins();
         
-        /*
+        
 	//SPI 
-
-        LL_SPI_SetMode(SPI1, LL_SPI_MODE_MASTER);
-        LL_SPI_SetClockPhase(SPI1, LL_SPI_PHASE_1EDGE); // CPHA = 0
-        LL_SPI_SetClockPolarity(SPI1, LL_SPI_POLARITY_LOW); // CPOL = 0
-        LL_SPI_SetBaudRatePrescaler(SPI1,  LL_SPI_BAUDRATEPRESCALER_DIV32);//??????????
-        LL_SPI_SetTransferBitOrder(SPI1,LL_SPI_MSB_FIRST);
-        LL_SPI_SetTransferDirection(SPI1, LL_SPI_FULL_DUPLEX);
-        LL_SPI_SetDataWidth(SPI1, LL_SPI_DATAWIDTH_8BIT);
-        LL_SPI_SetNSSMode(SPI1, LL_SPI_NSS_SOFT);
-        LL_SPI_Enable(SPI1);
+        LL_SPI_Disable (SPI2);
+        LL_SPI_SetMode(SPI2, LL_SPI_MODE_MASTER);
+        LL_SPI_SetClockPhase(SPI2, LL_SPI_PHASE_1EDGE); // CPHA = 0
+        LL_SPI_SetClockPolarity(SPI2, LL_SPI_POLARITY_LOW); // CPOL = 0
+        LL_SPI_SetBaudRatePrescaler(SPI2,  LL_SPI_BAUDRATEPRESCALER_DIV32);//??????????
+        LL_SPI_SetTransferBitOrder(SPI2,LL_SPI_MSB_FIRST);
+        LL_SPI_SetTransferDirection(SPI2, LL_SPI_FULL_DUPLEX);
+        LL_SPI_SetDataWidth(SPI2, LL_SPI_DATAWIDTH_8BIT);
+        LL_SPI_SetNSSMode(SPI2, LL_SPI_NSS_SOFT);
+        LL_SPI_Enable(SPI2);
 
 	TM_MFRC522_Reset();
         
@@ -49,7 +49,7 @@ void TM_MFRC522_Init(void) {
 	TM_MFRC522_WriteRegister(MFRC522_REG_MODE, 0x3D);
 
 	TM_MFRC522_AntennaOn();		//Open the antenna
-        */
+        
 }
 
 TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
@@ -91,14 +91,15 @@ void TM_MFRC522_InitPins(void) {
 	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);	
 */      
         //GPIO SETTING for SPI2
-        //  AF5 SPI1_NSS  PB12
-        //  AF5 SPI1_SCK  PB13
-        //  AF5 SPI1_MISO PB14
-        //  AF5 SPI1_MOSI PB15
+        //  AF5 SPI2_NSS  PB12
+        //  AF5 SPI2_SCK  PB13
+        //  AF5 SPI2_MISO PB14
+        //  AF5 SPI2_MOSI PB15
         __HAL_RCC_GPIOB_CLK_ENABLE();
+        __HAL_RCC_SPI2_CLK_ENABLE();
         
         GPIO_InitTypeDef GPIO_Init_for_SPI2;
-        GPIO_Init_for_SPI2.Pin = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
+        GPIO_Init_for_SPI2.Pin = (GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15);
         GPIO_Init_for_SPI2.Mode = GPIO_MODE_AF_PP;
         GPIO_Init_for_SPI2.Alternate = GPIO_AF5_SPI2;
         HAL_GPIO_Init(GPIOB, &GPIO_Init_for_SPI2);
@@ -106,6 +107,7 @@ void TM_MFRC522_InitPins(void) {
         //NSS SETTING
         GPIO_InitTypeDef GPIO_Init_for_SPI2_NSS;
         GPIO_Init_for_SPI2_NSS.Pin = GPIO_PIN_12;
+        GPIO_Init_for_SPI2_NSS.Mode = GPIO_MODE_OUTPUT_PP;
         GPIO_Init_for_SPI2_NSS.Speed = GPIO_SPEED_FREQ_MEDIUM;
         GPIO_Init_for_SPI2_NSS.Pull = GPIO_NOPULL;
         HAL_GPIO_Init(GPIOB, &GPIO_Init_for_SPI2_NSS);
@@ -119,20 +121,20 @@ void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
         
 	//Send address
         /**TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);*/
-        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
-        LL_SPI_TransmitData8(SPI1, (addr << 1) & 0x7E);
-	while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
-        LL_SPI_ReceiveData8(SPI1);
+        while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
+        LL_SPI_TransmitData8(SPI2, (addr << 1) & 0x7E);
+	while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
+        LL_SPI_ReceiveData8(SPI2);
         
         // Important! No NSS break here!
         // Software slave select should be used or TransmitData16.
         
 	//Send data	
 	/**TM_SPI_Send(MFRC522_SPI, val);*/
-        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
-        LL_SPI_TransmitData8(SPI1, val);
-        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
-        LL_SPI_ReceiveData8(SPI1);
+        while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
+        LL_SPI_TransmitData8(SPI2, val);
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
+        LL_SPI_ReceiveData8(SPI2);
         
 	//CS high
 	MFRC522_CS_HIGH;
@@ -144,19 +146,19 @@ uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	MFRC522_CS_LOW;
         
 	/**TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	*/
-        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
-        LL_SPI_TransmitData8 (SPI1, (((addr << 1) & 0x7E) | 0x80));
-        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
-        LL_SPI_ReceiveData8(SPI1);
+        while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
+        LL_SPI_TransmitData8 (SPI2, (((addr << 1) & 0x7E) | 0x80));
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
+        val = LL_SPI_ReceiveData8(SPI2);
         
         // Important! No NSS break here!
         // Software slave select should be used or TransmitData16.
         
         /**val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);*/
-        while(!LL_SPI_IsActiveFlag_TXE(SPI1)) {}
-        LL_SPI_TransmitData8 (SPI1, MFRC522_DUMMY);
-        while(!LL_SPI_IsActiveFlag_RXNE(SPI1)) {}
-        val = LL_SPI_ReceiveData8(SPI1);
+        while(!LL_SPI_IsActiveFlag_TXE(SPI2)) {}
+        LL_SPI_TransmitData8 (SPI2, MFRC522_DUMMY);
+        while(!LL_SPI_IsActiveFlag_RXNE(SPI2)) {}
+         LL_SPI_ReceiveData8(SPI2);
         
 	//CS high
 	MFRC522_CS_HIGH;
