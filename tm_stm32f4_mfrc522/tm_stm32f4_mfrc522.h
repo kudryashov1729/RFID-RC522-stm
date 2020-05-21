@@ -84,8 +84,8 @@
 /* Default CS pin used */
 #ifndef MFRC522_CS_PIN
 #define MFRC522_CS_RCC					RCC_AHB1Periph_GPIOG
-#define MFRC522_CS_PORT					GPIOA
-#define MFRC522_CS_PIN					GPIO_Pin_4
+#define MFRC522_CS_PORT					GPIOG
+#define MFRC522_CS_PIN					GPIO_Pin_2
 #endif
 
 /**
@@ -102,8 +102,8 @@ typedef enum {
 /**#define MFRC522_CS_LOW					MFRC522_CS_PORT->BSRRH = MFRC522_CS_PIN;
    #define MFRC522_CS_HIGH					MFRC522_CS_PORT->BSRRL = MFRC522_CS_PIN;*/
 
-#define MFRC522_CS_LOW					GPIOA->BSRR = GPIO_BSRR_BR4;
-#define MFRC522_CS_HIGH					GPIOA->BSRR = GPIO_BSRR_BS4;
+#define MFRC522_CS_LOW					GPIOG->BSRR = GPIO_BSRR_BR2;
+#define MFRC522_CS_HIGH					GPIOG->BSRR = GPIO_BSRR_BS2;
 
 /* MFRC522 Commands */
 #define PCD_IDLE						0x00   //NO action; Cancel the current command
