@@ -102,8 +102,8 @@ typedef enum {
 /**#define MFRC522_CS_LOW					MFRC522_CS_PORT->BSRRH = MFRC522_CS_PIN;
    #define MFRC522_CS_HIGH					MFRC522_CS_PORT->BSRRL = MFRC522_CS_PIN;*/
 
-#define MFRC522_CS_LOW					GPIOB->BSRR = GPIO_BSRR_BR12;
-#define MFRC522_CS_HIGH					GPIOB->BSRR = GPIO_BSRR_BS12;
+#define MFRC522_CS_LOW					GPIOG->BSRR = GPIO_BSRR_BR2;
+#define MFRC522_CS_HIGH					GPIOG->BSRR = GPIO_BSRR_BS2;
 
 /* MFRC522 Commands */
 #define PCD_IDLE						0x00   //NO action; Cancel the current command
