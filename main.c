@@ -22,8 +22,12 @@ uint8_t addr1, card_id[5];
 volatile uint8_t val_1 = 1, card_is_here = 0;
 
 uint8_t _blockAddr;
-uint8_t Data [100];
- 
+uint8_t Data [16];
+uint8_t DataR [16];
+TM_MFRC522_Status_t status_test_read;
+TM_MFRC522_Status_t status_test_auth;
+TM_MFRC522_Status_t status_test_write;
+uint8_t result;
 
 void led_init(void)
 {
@@ -50,43 +54,21 @@ void main()
   TM_MFRC522_Init(); //Initialize MFRC522 RFID
   led_init();
   
-  BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
-  BSP_LCD_SetBackColor(LCD_COLOR_WHITE);//Choose background color
-  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);//Set work color, not only for text
-  //Hello MSU
-  BSP_LCD_DisplayStringAt(20, 10, "Hello MSU!", LEFT_MODE);
-  //Draw Russian flag
-  BSP_LCD_DrawRect(40, 40, 150, 40);
-  BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-  BSP_LCD_FillRect(40, 80, 150, 40);
-  BSP_LCD_SetTextColor(LCD_COLOR_RED);
-  BSP_LCD_FillRect(40, 120, 150, 40);
-  //Write several lines
-  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-  char str[10];
-  for(int i = 7; i<12; i++)
-  {
-  sprintf(str, "Line %d", i);
-  BSP_LCD_DisplayStringAtLine(i, str);
-  }
 
-  //TM_MFRC522_WriteRegister(MFRC522_REG_T_MODE, 0x8D);
-  addr1 = 0x37;
-  val_1 = TM_MFRC522_ReadRegister( addr1);
-  addr1 = 0x35;
-  val_1 = TM_MFRC522_ReadRegister( addr1);
-  addr1 = MFRC522_REG_SERIALSPEED; //0x1F
-  val_1 = TM_MFRC522_ReadRegister( addr1);
-  addr1 = MFRC522_REG_T_MODE; //0x2A
-  val_1 = TM_MFRC522_ReadRegister( addr1);
-
-  uint8_t CardID[5];
+  uint8_t CardID[4] = {0xD9, 0xC1, 0x00, 0xA3 /*,  0xBB*/};
   
-  uint8_t result;
   
+  uint8_t Sectorkey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
   _blockAddr = 0;
   
-  
+  Data[0] = 0x17;
+  Data[1] = 0x29;
+  for(int i = 0; i < 14; i++){
+    Data[i+2] = 0x00;
+  }
+  status_test_auth = MI_ERR;
+  status_test_write= MI_ERR;
+  status_test_read = MI_ERR;
   
   while(1) {
     // Check card
@@ -94,10 +76,20 @@ void main()
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
     {
-      card_is_here = 1;
-      //LL_GPIO_SetOutputPin(GPIOG, LL_GPIO_PIN_14);
+      card_is_here = 1;      
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
-      TM_MFRC522_Read( _blockAddr, Data);
+      TM_MFRC522_SelectTag(card_id);
+      status_test_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, _blockAddr, Sectorkey, card_id); //authorizate card
+      if(status_test_auth == MI_OK){ //if authorizated
+        status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
+        /*
+        status_test_write = TM_MFRC522_Write( _blockAddr, Data);
+        if( status_test_write == MI_OK) {
+          status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
+        }*/
+      }
+      
+      
     }
     else  
     {
