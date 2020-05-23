@@ -61,7 +61,7 @@ TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
 		//Anti-collision, return card serial number 4 bytes
 		status = TM_MFRC522_Anticoll(id);	
 	}
-	TM_MFRC522_Halt();			//Command card into hibernation 
+	//TM_MFRC522_Halt();			//Command card into hibernation 
 
 	return status;
 }
@@ -409,7 +409,8 @@ TM_MFRC522_Status_t TM_MFRC522_Read(uint8_t blockAddr, uint8_t* recvData) {
 	if ((status != MI_OK) || (unLen != 0x90)) {
 		status = MI_ERR;
 	}
-
+        TM_MFRC522_Halt();
+        TM_MFRC522_StopCrypto1();
 	return status;
 }
 
@@ -454,4 +455,14 @@ void TM_MFRC522_Halt(void) {
 
 	TM_MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &unLen);
 }
-
+/**
+ * Used to exit the PCD from its authenticated state.
+ * Remember to call this function after communicating with an authenticated PICC - otherwise no new communications can start. Use after halt.
+ */
+void TM_MFRC522_StopCrypto1( void) {
+	// Clear MFCrypto1On bit
+	// Status2Reg[7..0] bits are: TempSensClear I2CForceHS reserved reserved MFCrypto1On ModemState[2:0]
+        uint8_t tmp;
+	tmp = TM_MFRC522_ReadRegister(MFRC522_REG_STATUS2);
+	TM_MFRC522_WriteRegister(MFRC522_REG_STATUS2, tmp & (~ 0x08));		// clear bit mask
+} // End TM_MFRC522_StopCrypto1()

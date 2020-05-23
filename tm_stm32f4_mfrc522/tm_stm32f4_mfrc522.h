@@ -260,6 +260,7 @@ extern TM_MFRC522_Status_t TM_MFRC522_Auth(uint8_t authMode, uint8_t BlockAddr, 
 extern TM_MFRC522_Status_t TM_MFRC522_Read(uint8_t blockAddr, uint8_t* recvData);
 extern TM_MFRC522_Status_t TM_MFRC522_Write(uint8_t blockAddr, uint8_t* writeData);
 extern void TM_MFRC522_Halt(void);
+extern void TM_MFRC522_StopCrypto1(void);
 
 #endif
 
