@@ -1,9 +1,7 @@
 #include "stm32f429xx.h"
 
-#include "stm32f4xx_ll_bus.h"
+
 #include "stm32f4xx_ll_spi.h"
-#include "stm32f4xx_ll_rcc.h"
-#include "stm32f4xx_ll_gpio.h"
 #include "tm_stm32f4_mfrc522.h"
 
 #include "main.h"
@@ -15,7 +13,10 @@ static void SystemClock_Config(void);
 void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data );
 uint8_t card_id[5];
 
-uint8_t _blockAddr;
+
+volatile uint8_t _blockAddr;
+
+
 uint8_t Data [18];
 uint8_t DataR [20];
 TM_MFRC522_Status_t status_read;
@@ -31,6 +32,16 @@ void led_init(void)
   GPIOG_Init_led.Pin = (GPIO_PIN_13 | GPIO_PIN_14);
   GPIOG_Init_led.Mode = GPIO_MODE_OUTPUT_PP;
   HAL_GPIO_Init(GPIOG, &GPIOG_Init_led);
+}
+
+void button_init(void)
+{
+  GPIOA->MODER &= ~(GPIO_MODER_MODER0_0 |GPIO_MODER_MODER0_1); //PAO mode is input
+  EXTI->IMR |= EXTI_IMR_MR0; //Interrupt request from line 0 is not masked
+  EXTI->RTSR |= EXTI_RTSR_TR0; //Rising trigger enabled (for Event and Interrupt) for input line
+  EXTI->FTSR &= ~EXTI_FTSR_TR0; //Falling trigger enabled (for Event and Interrupt) for input line.
+  
+  NVIC_EnableIRQ(EXTI0_IRQn); // Enables a device specific interrupt in the NVIC interrupt controller.
 }
   
 void main()
@@ -48,18 +59,19 @@ void main()
   
   TM_MFRC522_Init(); //Initialize MFRC522 RFID
   led_init();
-  x = BSP_LCD_GetXSize();
-  volatile uint32_t y = BSP_LCD_GetYSize();
+  button_init();
+
 
   BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
   BSP_LCD_SetBackColor(LCD_COLOR_WHITE);//Choose background color
   BSP_LCD_SetTextColor(LCD_COLOR_BLACK);//Set work color, not only for text
   BSP_LCD_DisplayStringAt(0, LINE(0), "NO CARD!", CENTER_MODE);
 
-  uint8_t CardID[4] = {0xD9, 0xC1, 0x00, 0xA3};
+  uint8_t block_mem = 1;
   
   uint8_t Sectorkey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
   _blockAddr = 1;
+  
   Data[0] = 0x17;
   Data[1] = 0x29;
   for(int i = 0; i < 14; i++){
@@ -72,7 +84,6 @@ void main()
   
   while(1) {
     // Check card
-    status_memory  = result;
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
     {      
@@ -92,8 +103,14 @@ void main()
     {
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
     }
-    if( !(status_memory == result) ){
+    if(status_memory != result){
       display_print(result, status_auth, status_read, card_id, _blockAddr, DataR);
+      block_mem = _blockAddr;
+    }   
+    if(block_mem != _blockAddr) {
+      status_memory = ~result;
+    }else{
+      status_memory  = result;
     }
   }
 };

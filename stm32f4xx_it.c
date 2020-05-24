@@ -173,6 +173,21 @@ void SysTick_Handler(void)
 {
 }*/
 
+extern volatile uint8_t _blockAddr;
+
+
+void EXTI0_IRQHandler(){
+  EXTI->PR |= EXTI_PR_PR0;
+  if( GPIOA->IDR  & GPIO_IDR_ID0 ) // if PA0 is set
+    {
+      GPIOG->ODR |= GPIO_ODR_OD14;
+    }
+    else
+    {
+      GPIOG->ODR &=~ GPIO_ODR_OD14; 
+    }
+  _blockAddr = (_blockAddr + 1) % 4;
+}
 
 /**
   * @}
