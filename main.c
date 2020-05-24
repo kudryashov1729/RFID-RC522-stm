@@ -12,22 +12,17 @@
 
 
 static void SystemClock_Config(void);
-
-//GPIO SETTING for SPI2
-        //  AF5 SPI1_NSS  PB12
-        //  AF5 SPI1_SCK  PB13
-        //  AF5 SPI1_MISO PB14
-        //  AF5 SPI1_MOSI PB15
-uint8_t addr1, card_id[5];
-volatile uint8_t val_1 = 1, card_is_here = 0;
+void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data );
+uint8_t card_id[5];
 
 uint8_t _blockAddr;
-uint8_t Data [16];
-uint8_t DataR [16];
-TM_MFRC522_Status_t status_test_read;
-TM_MFRC522_Status_t status_test_auth;
+uint8_t Data [18];
+uint8_t DataR [20];
+TM_MFRC522_Status_t status_read;
+TM_MFRC522_Status_t status_auth;
 TM_MFRC522_Status_t status_test_write;
-uint8_t result;
+TM_MFRC522_Status_t result;
+volatile uint32_t x;
 
 void led_init(void)
 {
@@ -53,52 +48,103 @@ void main()
   
   TM_MFRC522_Init(); //Initialize MFRC522 RFID
   led_init();
-  
+  x = BSP_LCD_GetXSize();
+  volatile uint32_t y = BSP_LCD_GetYSize();
 
-  uint8_t CardID[4] = {0xD9, 0xC1, 0x00, 0xA3 /*,  0xBB*/};
-  
+  BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
+  BSP_LCD_SetBackColor(LCD_COLOR_WHITE);//Choose background color
+  BSP_LCD_SetTextColor(LCD_COLOR_BLACK);//Set work color, not only for text
+  BSP_LCD_DisplayStringAt(0, LINE(0), "NO CARD!", CENTER_MODE);
+
+  uint8_t CardID[4] = {0xD9, 0xC1, 0x00, 0xA3};
   
   uint8_t Sectorkey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-  _blockAddr = 0;
-  
+  _blockAddr = 1;
   Data[0] = 0x17;
   Data[1] = 0x29;
   for(int i = 0; i < 14; i++){
     Data[i+2] = 0x00;
   }
-  status_test_auth = MI_ERR;
+  status_auth = MI_ERR;
   status_test_write= MI_ERR;
-  status_test_read = MI_ERR;
+  status_read = MI_ERR;
+  TM_MFRC522_Status_t status_memory;
   
   while(1) {
     // Check card
-    
+    status_memory  = result;
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
-    {
-      card_is_here = 1;      
+    {      
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
       TM_MFRC522_SelectTag(card_id);
-      status_test_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, _blockAddr, Sectorkey, card_id); //authorizate card
-      if(status_test_auth == MI_OK){ //if authorizated
-        status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
+      status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, _blockAddr, Sectorkey, card_id); //authorizate card
+      if(status_auth == MI_OK){ //if authorizated
+        status_read = TM_MFRC522_Read( _blockAddr, DataR);
         /*
         status_test_write = TM_MFRC522_Write( _blockAddr, Data);
         if( status_test_write == MI_OK) {
           status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
         }*/
       }
-      
-      
     }
     else  
     {
-      card_is_here = 0;
-      //LL_GPIO_ResetOutputPin(GPIOG, LL_GPIO_PIN_14);
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+    }
+    if( !(status_memory == result) ){
+      display_print(result, status_auth, status_read, card_id, _blockAddr, DataR);
     }
   }
 };
+
+void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data ){
+  
+  if( status_card_detected == MI_OK) {
+    BSP_LCD_DisplayStringAt(0, LINE(0), "DETECTED!", CENTER_MODE);
+    //LINE 2 PRINT UID
+    char str[15];
+    sprintf(str, "Card UID:");
+    BSP_LCD_DisplayStringAtLine(1, str);
+    BSP_LCD_ClearStringLine(2);
+    sprintf(str, "%X %X %X %X", id[0], id[1], id[2], id[3]);
+    BSP_LCD_DisplayStringAt(0, LINE(2), str, CENTER_MODE);
+    if(auth == MI_OK){
+      sprintf(str, "Data Block %d:", block);
+      BSP_LCD_ClearStringLine(4);
+      BSP_LCD_DisplayStringAt(0, LINE(4), str, LEFT_MODE);
+      for(int i = 5; i < 9; i++){
+        BSP_LCD_ClearStringLine(i);
+      }
+      if(read == MI_OK){
+        for(int i = 0; i < 4; i++){
+          BSP_LCD_ClearStringLine(i + 5);
+          for(int k = 0; k < 4; k ++ ){
+            sprintf(str, "%X", data[ (i * 4) + k]);
+            BSP_LCD_DisplayStringAt(240/4 * k, LINE(5 + i), str, LEFT_MODE);
+          }
+        }
+      }else{
+        for(int i = 4; i < 11; i++){
+          BSP_LCD_ClearStringLine(i);
+        } 
+        BSP_LCD_DisplayStringAt(0, LINE(4), "Fail to", LEFT_MODE);
+        BSP_LCD_DisplayStringAt(0, LINE(5), "read data.", LEFT_MODE);
+      }
+    }else{
+      for(int i = 4; i < 11; i++){
+        BSP_LCD_ClearStringLine(i);
+      } 
+      BSP_LCD_DisplayStringAt(0, LINE(4), "No access to", LEFT_MODE);
+      BSP_LCD_DisplayStringAt(0, LINE(5), "card data.", LEFT_MODE);
+      BSP_LCD_DisplayStringAt(0, LINE(6), "Incorrect key.", LEFT_MODE);
+    }
+  }
+  else{
+    BSP_LCD_ClearStringLine(0);
+    BSP_LCD_DisplayStringAt(0, LINE(0), "NO CARD!", CENTER_MODE);
+  }
+}
 
 static void SystemClock_Config(void)
 {

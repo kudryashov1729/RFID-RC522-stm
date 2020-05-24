@@ -55,7 +55,7 @@ void TM_MFRC522_Init(void) {
 TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
 	TM_MFRC522_Status_t status;
 	//Find cards, return card type
-	status = TM_MFRC522_Request(PICC_REQIDL, id);	
+	status = TM_MFRC522_Request(PICC_REQALL, id);	
 	if (status == MI_OK) {
 		//Card detected
 		//Anti-collision, return card serial number 4 bytes
@@ -372,7 +372,18 @@ uint8_t TM_MFRC522_SelectTag(uint8_t* serNum) {
 
 	return size;
 }
-
+/**
+ * Executes the MFRC522 MFAuthent command.
+ * This command manages MIFARE authentication to enable a secure communication to any MIFARE Mini, MIFARE 1K and MIFARE 4K card.
+ * The authentication is described in the MFRC522 datasheet section 10.3.1.9 and http://www.nxp.com/documents/data_sheet/MF1S503x.pdf section 10.1.
+ * For use with MIFARE Classic PICCs.
+ * The PICC must be selected - ie in state ACTIVE(*) - before calling this function.
+ * Remember to call PCD_StopCrypto1() after communicating with the authenticated PICC - otherwise no new communications can start.
+ * 
+ * All keys are set to FFFFFFFFFFFFh at chip delivery.
+ * 
+ * @return STATUS_OK on success, STATUS_??? otherwise. Probably STATUS_TIMEOUT if you supply the wrong key.
+ */
 TM_MFRC522_Status_t TM_MFRC522_Auth(uint8_t authMode, uint8_t BlockAddr, uint8_t* Sectorkey, uint8_t* serNum) {
 	TM_MFRC522_Status_t status;
 	uint16_t recvBits;

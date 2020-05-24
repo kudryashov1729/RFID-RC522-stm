@@ -773,7 +773,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\ST\stm32f429xI.icf</state>
+                    <state>$PROJ_DIR$\project_.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
