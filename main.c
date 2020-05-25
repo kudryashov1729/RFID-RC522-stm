@@ -2,6 +2,9 @@
 
 
 #include "stm32f4xx_ll_spi.h"
+#include "stm32f4xx_ll_usart.h"
+#include "stm32f4xx_ll_rcc.h"
+
 #include "tm_stm32f4_mfrc522.h"
 
 #include "main.h"
@@ -13,6 +16,7 @@ static void SystemClock_Config(void);
 void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data );
 uint8_t card_id[5];
 
+volatile uint8_t data_UART;
 
 volatile uint8_t _blockAddr;
 
@@ -43,6 +47,60 @@ void button_init(void)
   
   NVIC_EnableIRQ(EXTI0_IRQn); // Enables a device specific interrupt in the NVIC interrupt controller.
 }
+
+
+void UART_init( void){
+  //CLOCKING
+  __HAL_RCC_USART1_CLK_ENABLE();
+  
+  /*
+PA9     USART1_TX       AF7
+PA10    USART1_RX       AF7
+*/
+
+  
+  //GPIO SETTING
+  GPIOC->MODER |= GPIO_MODER_MODER8_0; //PC8 mode is output
+  GPIOC->ODR |= GPIO_ODR_OD8; //PC8 is set to use as 5V for UART
+  GPIO_InitTypeDef GPIO_Init_for_UART;
+  GPIO_Init_for_UART.Pin = (GPIO_PIN_10 | GPIO_PIN_9);
+  GPIO_Init_for_UART.Mode = GPIO_MODE_AF_PP;
+  GPIO_Init_for_UART.Alternate = GPIO_AF7_USART1;
+  HAL_GPIO_Init(GPIOA, &GPIO_Init_for_UART);
+  
+  //USART SETTING
+  LL_USART_EnableDirectionTx(USART1);
+  LL_USART_EnableDirectionRx(USART1);
+  LL_USART_SetParity(USART1, LL_USART_PARITY_NONE);   // PARITY - CHETNOST
+  LL_USART_SetDataWidth(USART1, LL_USART_DATAWIDTH_8B);
+  LL_USART_SetStopBitsLength(USART1, LL_USART_STOPBITS_1);
+  //
+  LL_RCC_ClocksTypeDef RCCClocks;
+  LL_RCC_GetSystemClocksFreq(&RCCClocks);                                       // APB2 clock frequecy will be in RCCClocks.PCLK2_Frequency.
+  //
+  LL_USART_SetBaudRate(USART1, 90000000, LL_USART_OVERSAMPLING_16, 9600);//Baud Rate = Skorost' peredachi
+  LL_USART_EnableIT_RXNE(USART1);                                                         //Enable RX Not Empty Interrupt.
+  LL_USART_Enable (USART1);
+  
+  //NVIC SETTING
+  __NVIC_EnableIRQ(USART1_IRQn);
+}
+
+void send_to_uart(uint8_t data)
+{
+ while(!(USART1->SR & USART_SR_TC)); //Transmission is complete
+ USART1->DR=data;
+}
+ 
+void send_str(char * string)
+{
+ uint8_t i=0;
+ while(string[i]) 
+{
+  send_to_uart(string[i]);
+  i++;
+ }
+}
   
 void main()
 {
@@ -60,6 +118,7 @@ void main()
   TM_MFRC522_Init(); //Initialize MFRC522 RFID
   led_init();
   button_init();
+  UART_init();
 
 
   BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
@@ -116,8 +175,8 @@ void main()
 };
 
 void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data ){
-  
   if( status_card_detected == MI_OK) {
+    send_str( data);
     BSP_LCD_DisplayStringAt(0, LINE(0), "DETECTED!", CENTER_MODE);
     //LINE 2 PRINT UID
     char str[15];

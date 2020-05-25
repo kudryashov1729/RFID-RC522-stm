@@ -189,6 +189,18 @@ void EXTI0_IRQHandler(){
   _blockAddr = (_blockAddr + 1) % 4;
 }
 
+
+#include "stm32f4xx_ll_usart.h"
+extern volatile uint8_t data_UART;
+
+void USART1_IRQHandler()
+{
+  if(LL_USART_IsActiveFlag_RXNE(USART1)){ //Check if the USART Read Data Register Not Empty Flag is set or not.
+    data_UART = LL_USART_ReceiveData8(USART1); //Read Receiver Data register
+  }
+  LL_USART_TransmitData8(USART1, data_UART); //Write in Transmitter Data Register
+} 
+
 /**
   * @}
   */ 

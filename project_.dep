@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>3762385103</fileChecksum>
+    <fileChecksum>4176982537</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -208,7 +208,13 @@
             <file>$PROJ_DIR$\Src\stm32f4xx_hal_rcc_ex.c</file>
             <file>$PROJ_DIR$\Debug\Obj\system_stm32f4xx.o</file>
             <file>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_smartcard.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_usart.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_usart.xcl</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</file>
             <file>$PROJ_DIR$\project_.icf</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c</file>
+            <file>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usart.h</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usart.c</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -295,7 +301,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 58 129 133 107 80 41 147 160 63 139 155 44 64 35 87 22 34 42 62 54 43 101 88 158 49 99 32 55 18 57 7 36 47 66 70 75 166 59 15 140 163 144 109 156 195 103 165 135 10 179 11 20 102 170 167 111 108 171 112 164 127 162 169 73 51 131 134 38 122 86 74 124 125 202 183 84 199 184 37 194 60 100 92 116 113 67 174 189 187 190</file>
+                    <file> 58 129 133 107 80 41 147 160 63 139 155 44 64 35 87 22 34 42 62 54 43 101 88 158 49 99 32 55 18 57 7 36 47 66 70 75 166 59 15 140 163 144 109 156 195 103 165 135 10 179 11 20 102 170 167 111 108 171 112 164 127 162 169 73 51 131 134 38 122 86 74 124 125 202 183 84 199 184 37 208 100 194 60 92 116 113 67 174 189 187 190</file>
                 </tool>
             </inputs>
         </file>
@@ -393,7 +399,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 116 34 42 62 54 22 58 129 133 107 80 41 147 160 63 139 155 44 64 35 43 101 88 158 49 99 32 55 18 57 7 36 47 66 70 75 166 59 15 140 163 144 109 156 195 103 165 135 10 179 11 20 102 170 167 111 108 171 112 164 127 162 169 73 51 131 134 38 122 86 74 124 125 202 183 84 199 184 37 173</file>
+                    <file> 116 34 42 62 54 22 58 129 133 107 80 41 147 160 63 139 155 44 64 35 43 101 88 158 49 99 32 55 18 57 7 36 47 66 70 75 166 59 15 140 163 144 109 156 195 103 165 135 10 179 11 20 102 170 167 111 108 171 112 164 127 162 169 73 51 131 134 38 122 86 74 124 125 202 183 84 199 184 37 173 208</file>
                 </tool>
             </inputs>
         </file>
@@ -886,7 +892,7 @@
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 203 78 119 115 180 182 145 82 148 196 90 185 141 175 118 50 56 77 110 178 106 201 52 128 105 146 151</file>
+                    <file> 206 78 119 115 180 182 145 82 148 196 90 185 141 175 118 50 56 77 110 178 45 106 203 201 52 128 105 146 151</file>
                 </tool>
             </inputs>
         </file>
@@ -956,6 +962,51 @@
                     <file> 96</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 192</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 76</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 204</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 208 22 58 129 133 107 80 41 147 160 63 139 155 44 64 35 34 42 62 54 43 101 88 158 49 99 32 55 18 57 7 36 47 66 70 75 166 59 15 140 163 144 109 156 195 103 165 135 10 179 11 20 102 170 167 111 108 171 112 164 127 162 169 73 51 131 134 38 122 86 74 124 125 202 183 84 199 184 37 100 60</file>
+                </tool>
+            </inputs>
         </file>
         <forcedrebuild>
             <name>$PROJ_DIR$\STM32F429I-Discovery\stm32f429i_discovery.c</name>
