@@ -137,6 +137,7 @@ void main()
   uint8_t block_mem = 1;
   
   uint8_t Sectorkey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+  //uint8_t Sectorkey[6] = {0xE5, 0x6A, 0xC1, 0x27, 0xDD, 0x45};
   _blockAddr = 0;
   
   Data[0] = 0x17;
@@ -229,6 +230,11 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
     send_str( str);
     send_str("-------------------------------------------\n\r");
     for(int i = 0; i < 64; i++){
+      if( i % 4 == 0){
+        send_str("Sector ");
+        sprintf(str, "%d:\n\r", (i / 4));
+        send_str(str);
+      }
       send_str("Block ");
       sprintf(str, "%d: ", i);
       send_str(str);
@@ -237,11 +243,11 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
       }else{
         for(int k = 0 ; k < 16; k++){
           if(data[i][k] <= 32){ 
-            sprintf(str, " [%X]\t", data[i][k]);
+            sprintf(str, " %X", data[i][k]);
             send_str(str);
           }
           else{
-            sprintf(str, "%c[%X]\t", data[i][k], data[i][k]);
+            sprintf(str, " %X", data[i][k]);
             send_str(str);
           }
         }
