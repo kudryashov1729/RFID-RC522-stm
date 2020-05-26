@@ -191,14 +191,34 @@ void EXTI0_IRQHandler(){
 
 
 #include "stm32f4xx_ll_usart.h"
+#include "string.h"
 extern volatile uint8_t data_UART;
+extern char uart1_rx_buf[64];
+extern char uart1_rx_bit;
+extern void send_to_uart(uint8_t data);
+extern void send_str(char * string);
 
 void USART1_IRQHandler()
 {
-  if(LL_USART_IsActiveFlag_RXNE(USART1)){ //Check if the USART Read Data Register Not Empty Flag is set or not.
-    data_UART = LL_USART_ReceiveData8(USART1); //Read Receiver Data register
+  //LL_USART_TransmitData8(USART1, data_UART); //Write in Transmitter Data Register
+  if (LL_USART_IsActiveFlag_RXNE(USART1)){ //Check if the USART Read Data Register Not Empty Flag is set or not.
+    data_UART = LL_USART_ReceiveData8(USART1);
+    uart1_rx_buf[uart1_rx_bit]= data_UART;
+    uart1_rx_bit = (uart1_rx_bit + 1) % 64;
+    //while(!(USART1->SR & USART_SR_TC)); //Transmission is complete
+    //LL_USART_TransmitData8(USART1, data_UART);
+    if(data_UART == '\n'){
+      if(strcmp(uart1_rx_buf, "scan\n")==0){
+        send_str("scan is on\n"); 
+      }else{
+        send_str("Unknown commande: "); 
+        uart1_rx_buf[uart1_rx_bit + 1]= 0;
+        send_str(uart1_rx_buf);
+      }
+      uart1_rx_bit=0;
+    }
+     
   }
-  LL_USART_TransmitData8(USART1, data_UART); //Write in Transmitter Data Register
 } 
 
 /**

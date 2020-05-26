@@ -13,16 +13,19 @@
 
 
 static void SystemClock_Config(void);
-void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data );
+void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t data[64][17] );
 uint8_t card_id[5];
 
 volatile uint8_t data_UART;
+char uart1_rx_buf[64];
+char uart1_rx_bit;
 
 volatile uint8_t _blockAddr;
 
+uint8_t card_read_alldata[64][17];
 
 uint8_t Data [18];
-uint8_t DataR [20];
+uint8_t DataR [18];
 TM_MFRC522_Status_t status_read;
 TM_MFRC522_Status_t status_auth;
 TM_MFRC522_Status_t status_test_write;
@@ -101,6 +104,12 @@ void send_str(char * string)
   i++;
  }
 }
+void send_str_n(char * string, int n)
+{
+ for(int i = 0; i < n; i++){
+  send_to_uart(string[i]);
+ }
+}
   
 void main()
 {
@@ -120,7 +129,6 @@ void main()
   button_init();
   UART_init();
 
-
   BSP_LCD_Clear(LCD_COLOR_WHITE);//Clear display
   BSP_LCD_SetBackColor(LCD_COLOR_WHITE);//Choose background color
   BSP_LCD_SetTextColor(LCD_COLOR_BLACK);//Set work color, not only for text
@@ -129,7 +137,7 @@ void main()
   uint8_t block_mem = 1;
   
   uint8_t Sectorkey[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-  _blockAddr = 1;
+  _blockAddr = 0;
   
   Data[0] = 0x17;
   Data[1] = 0x29;
@@ -141,29 +149,65 @@ void main()
   status_read = MI_ERR;
   TM_MFRC522_Status_t status_memory;
   
+  int i_block = 0;
+  
   while(1) {
+        
     // Check card
     result = TM_MFRC522_Check(card_id);
     if (result == MI_OK)
-    {      
+    { 
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
-      TM_MFRC522_SelectTag(card_id);
-      status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, _blockAddr, Sectorkey, card_id); //authorizate card
-      if(status_auth == MI_OK){ //if authorizated
-        status_read = TM_MFRC522_Read( _blockAddr, DataR);
-        /*
-        status_test_write = TM_MFRC522_Write( _blockAddr, Data);
-        if( status_test_write == MI_OK) {
-          status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
-        }*/
+      TM_MFRC522_Halt();
+      while(result == MI_OK && i_block < 64){
+        result = TM_MFRC522_Check(card_id);
+        TM_MFRC522_SelectTag(card_id);
+        status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, i_block, Sectorkey, card_id); //authorizate card
+        if(status_auth == MI_OK){ //if authorizated
+          status_read = TM_MFRC522_Read( i_block, DataR);
+          if(status_read == MI_OK){
+            for(int k = 0; k < 16; k++){
+              card_read_alldata[i_block][k] = DataR[k];
+            }
+            card_read_alldata[i_block][16] = MI_OK;
+          }else{ 
+            TM_MFRC522_Halt();
+            TM_MFRC522_StopCrypto1();
+            card_read_alldata[i_block][16] = MI_ERR;// last byte is used to check data read
+          } 
+        }else{
+          TM_MFRC522_Halt();
+          TM_MFRC522_StopCrypto1();
+          card_read_alldata[i_block][16] = MI_ERR; // last byte is used to check data read
+        }
+        i_block ++;
       }
+      
+//      //READ FOR LCD output
+//      TM_MFRC522_SelectTag(card_id);
+//      status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, _blockAddr, Sectorkey, card_id); //authorizate card
+//      if(status_auth == MI_OK){ //if authorizated 
+//        status_read = TM_MFRC522_Read( _blockAddr, DataR);
+//        TM_MFRC522_Halt();
+//        TM_MFRC522_StopCrypto1();
+//        /*
+//        status_test_write = TM_MFRC522_Write( _blockAddr, Data);
+//        if( status_test_write == MI_OK) {
+//          status_test_read = TM_MFRC522_Read( _blockAddr, DataR);
+//        }*/
+//      }
+      
     }
     else  
     {
       HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+      i_block = 0;
     }
+    
+  
+    
     if(status_memory != result){
-      display_print(result, status_auth, status_read, card_id, _blockAddr, DataR);
+      display_print(result, status_auth, status_read, card_id, _blockAddr, card_read_alldata);
       block_mem = _blockAddr;
     }   
     if(block_mem != _blockAddr) {
@@ -174,12 +218,36 @@ void main()
   }
 };
 
-void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t * data ){
+void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t auth, TM_MFRC522_Status_t read, uint8_t * id, uint8_t block, uint8_t  data[64][17] ){
   if( status_card_detected == MI_OK) {
-    send_str( data);
+    char str[15];
+    //UART send
+    send_str("\n-------------------------------------------\n\r");
+    send_str( "Card UID: ");
+    sprintf(str, "%X %X %X %X\n\r", id[0], id[1], id[2], id[3]);
+    send_str( str);
+    send_str("-------------------------------------------\n\r");
+    for(int i = 0; i < 64; i++){
+      send_str("Block ");
+      sprintf(str, "%d: ", i);
+      send_str(str);
+      if(data[i][16] == MI_ERR){
+        send_str("No access to data. Incorrect key.\n\r");
+      }else{
+        for(int k = 0 ; k < 16; k++){
+          if(data[i][k] <= 32){ send_str(" [00]\t");}
+          else{
+            sprintf(str, "%c[%X]\t", data[i][k], data[i][k]);
+            send_str(str);
+          }
+        }
+        send_str("\n\r");
+      }
+    }
+
+    
     BSP_LCD_DisplayStringAt(0, LINE(0), "DETECTED!", CENTER_MODE);
     //LINE 2 PRINT UID
-    char str[15];
     sprintf(str, "Card UID:");
     BSP_LCD_DisplayStringAtLine(1, str);
     BSP_LCD_ClearStringLine(2);
@@ -196,7 +264,7 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
         for(int i = 0; i < 4; i++){
           BSP_LCD_ClearStringLine(i + 5);
           for(int k = 0; k < 4; k ++ ){
-            sprintf(str, "%X", data[ (i * 4) + k]);
+            sprintf(str, "%X", data[block][ (i * 4) + k]);
             BSP_LCD_DisplayStringAt(240/4 * k, LINE(5 + i), str, LEFT_MODE);
           }
         }

@@ -471,6 +471,7 @@ void TM_MFRC522_Halt(void) {
  * Remember to call this function after communicating with an authenticated PICC - otherwise no new communications can start. Use after halt.
  */
 void TM_MFRC522_StopCrypto1( void) {
+  
 	// Clear MFCrypto1On bit
 	// Status2Reg[7..0] bits are: TempSensClear I2CForceHS reserved reserved MFCrypto1On ModemState[2:0]
         uint8_t tmp;
