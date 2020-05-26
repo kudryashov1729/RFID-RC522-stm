@@ -144,7 +144,7 @@ void main()
   for(int i = 0; i < 14; i++){
     Data[i+2] = 0x00;
   }
-  status_auth = MI_ERR;
+  //status_auth = MI_ERR;
   status_test_write= MI_ERR;
   status_read = MI_ERR;
   TM_MFRC522_Status_t status_memory;
@@ -162,7 +162,8 @@ void main()
       while(result == MI_OK && i_block < 64){
         result = TM_MFRC522_Check(card_id);
         TM_MFRC522_SelectTag(card_id);
-        status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, i_block, Sectorkey, card_id); //authorizate card
+        //status_auth = TM_MFRC522_Auth( PICC_AUTHENT1A, i_block, Sectorkey, card_id); //authorizate card
+        status_auth == MI_OK;
         if(status_auth == MI_OK){ //if authorizated
           status_read = TM_MFRC522_Read( i_block, DataR);
           if(status_read == MI_OK){
@@ -224,7 +225,7 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
     //UART send
     send_str("\n-------------------------------------------\n\r");
     send_str( "Card UID: ");
-    sprintf(str, "%X %X %X %X\n\r", id[0], id[1], id[2], id[3]);
+    sprintf(str, "%X %X %X %X %X\n\r", id[0], id[1], id[2], id[3], id[4]);
     send_str( str);
     send_str("-------------------------------------------\n\r");
     for(int i = 0; i < 64; i++){
@@ -232,10 +233,13 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
       sprintf(str, "%d: ", i);
       send_str(str);
       if(data[i][16] == MI_ERR){
-        send_str("No access to data. Incorrect key.\n\r");
+        send_str("No access to data.\n\r");
       }else{
         for(int k = 0 ; k < 16; k++){
-          if(data[i][k] <= 32){ send_str(" [00]\t");}
+          if(data[i][k] <= 32){ 
+            sprintf(str, " [%X]\t", data[i][k]);
+            send_str(str);
+          }
           else{
             sprintf(str, "%c[%X]\t", data[i][k], data[i][k]);
             send_str(str);
