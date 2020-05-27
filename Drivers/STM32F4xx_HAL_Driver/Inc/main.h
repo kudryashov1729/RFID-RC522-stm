@@ -34,6 +34,7 @@
   */
 
 
+
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
@@ -45,6 +46,12 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+
+#define READ_16SECTORS_NO_KEY (1)
+#define READ_16SECTORS_WITH_KEY (2)
+#define WRITE_BLOCK (3)
+#define SET_KEY (4)
+#define SET_BLOCK (5)
 
 #endif /* __MAIN_H */
 

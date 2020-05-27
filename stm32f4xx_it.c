@@ -173,9 +173,9 @@ void SysTick_Handler(void)
 {
 }*/
 
-extern volatile uint8_t _blockAddr;
+extern volatile uint8_t block_Addr_to_write;
 
-
+/*
 void EXTI0_IRQHandler(){
   EXTI->PR |= EXTI_PR_PR0;
   if( GPIOA->IDR  & GPIO_IDR_ID0 ) // if PA0 is set
@@ -186,9 +186,8 @@ void EXTI0_IRQHandler(){
     {
       GPIOG->ODR &=~ GPIO_ODR_OD14; 
     }
-  _blockAddr = (_blockAddr + 1) % 4;
-}
-
+  block_Addr_to_write = (block_Addr_to_write + 1) % 4;
+}*/
 
 #include "stm32f4xx_ll_usart.h"
 #include "string.h"
@@ -197,27 +196,145 @@ extern char uart1_rx_buf[64];
 extern char uart1_rx_bit;
 extern void send_to_uart(uint8_t data);
 extern void send_str(char * string);
+extern uint8_t Sectorkey[6];
+extern uint8_t select_mode;
+extern uint8_t Data [18];
+
+int counter;
 
 void USART1_IRQHandler()
 {
-  //LL_USART_TransmitData8(USART1, data_UART); //Write in Transmitter Data Register
+  //LL_USART_ReceiveData8(USART1);
   if (LL_USART_IsActiveFlag_RXNE(USART1)){ //Check if the USART Read Data Register Not Empty Flag is set or not.
     data_UART = LL_USART_ReceiveData8(USART1);
-    uart1_rx_buf[uart1_rx_bit]= data_UART;
-    uart1_rx_bit = (uart1_rx_bit + 1) % 64;
-    //while(!(USART1->SR & USART_SR_TC)); //Transmission is complete
-    //LL_USART_TransmitData8(USART1, data_UART);
-    if(data_UART == '\n'){
-      if(strcmp(uart1_rx_buf, "scan\n")==0){
-        send_str("scan is on\n"); 
-      }else{
-        send_str("Unknown commande: "); 
-        uart1_rx_buf[uart1_rx_bit + 1]= 0;
-        send_str(uart1_rx_buf);
-      }
-      uart1_rx_bit=0;
+    if(data_UART == 0x7F) 
+    {
+      if(uart1_rx_bit != 0) uart1_rx_bit = uart1_rx_bit - 1;
     }
-     
+    else
+    {
+      uart1_rx_buf[uart1_rx_bit]= data_UART;
+      uart1_rx_bit = (uart1_rx_bit + 1) % 64;
+    }
+    
+    while(!(USART1->SR & USART_SR_TC)); //Transmission is complete
+    LL_USART_TransmitData8(USART1, data_UART); //Write in Transmitter Data Register
+    
+    switch(select_mode){
+    case SET_KEY:
+      if(data_UART == '\r')
+      {
+        send_str("\n\r");
+        uart1_rx_buf[uart1_rx_bit - 1]= 0;
+        uart1_rx_bit=0;
+        int i = 0;
+        Sectorkey[counter] = 0;
+        while(uart1_rx_buf[i])
+        {
+          Sectorkey[counter] = Sectorkey[counter] * 10 + (uart1_rx_buf[i] - '0');
+          i++;
+        }
+        if(counter > 4 )
+        {
+          counter = 0;
+          select_mode = READ_16SECTORS_WITH_KEY;
+          send_str("Key [ ");
+          char str[25];
+          sprintf(str, "%X %X %X %X %X %X ] is set.\n\r", Sectorkey[0], Sectorkey[1], Sectorkey[2], Sectorkey[3], Sectorkey[4], Sectorkey[5]);
+          send_str( str);
+        }
+        else
+        {
+          counter = counter + 1;
+        }
+      }
+      break;
+    case SET_BLOCK:
+      if(data_UART == '\r')
+      {
+        send_str("\n\r");
+        uart1_rx_buf[uart1_rx_bit - 1]= 0;
+        uart1_rx_bit=0;
+        if(counter == 0 )
+        {
+          int i = 0;
+          block_Addr_to_write = 0;
+          while(uart1_rx_buf[i])
+          {
+            block_Addr_to_write = block_Addr_to_write * 10 + (uart1_rx_buf[i] - '0');
+            i++;
+          }
+          send_str("Block is set. Expect data.\n\r");
+        }
+        if(counter == 1)
+        {
+          char str[10];
+          select_mode = WRITE_BLOCK;
+          send_str("Data: ");
+          for(int i = 0; i < 16; i++)
+          {
+            Data[i] = uart1_rx_buf[i];
+            sprintf(str, "%c", Data[i]);
+            send_str(str);
+          }
+          send_str("\n\rReady to write.\n\r");
+        }
+        if(counter > 1)
+        {
+          counter = 0;
+        }
+        else
+        {
+          counter = counter + 1;
+        }
+      }
+      break;
+    default:
+      if(data_UART == '\r')
+      {
+        uart1_rx_buf[uart1_rx_bit]= '\0';
+        uart1_rx_bit=0;
+        int flag = 1;
+        if(strcmp(uart1_rx_buf, "read without key\r")==0)
+        {
+          select_mode = READ_16SECTORS_NO_KEY;
+          send_str("\n\rCommand is active.\n\r");
+          flag = 0;
+        }
+        if(strcmp(uart1_rx_buf, "read with key\r")==0)
+        {
+          select_mode = READ_16SECTORS_WITH_KEY;
+          send_str("\n\rCommand is active.\n\r");
+          flag = 0;
+        }
+        if(strcmp(uart1_rx_buf, "set key\r")==0)
+        {
+          select_mode = SET_KEY;
+          send_str("\n\rCommand is active.Expect the key.\n\r");
+          flag = 0;
+        }
+        if(strcmp(uart1_rx_buf, "get key\r")==0)
+        {
+          send_str("\n\rKey: ");
+          char str[20];
+          sprintf(str, "%X %X %X %X %X %X\n\r", Sectorkey[0], Sectorkey[1], Sectorkey[2], Sectorkey[3], Sectorkey[4], Sectorkey[5]);
+          send_str( str);
+          flag = 0;
+        }
+        if(strcmp(uart1_rx_buf, "write block\r")==0)
+        {
+          select_mode = SET_BLOCK;
+          send_str("\n\rCommand is active. Expect block.\n\r");
+          flag = 0;
+        }
+        if(flag){
+          send_str("\n\rUnnknown commande\n\r");
+        }
+      }
+    break;
+    }
+    
+    
   }
 } 
 
