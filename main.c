@@ -220,7 +220,7 @@ void main()
         }
         break;
     case WRITE_BLOCK:
-        if(( block_Addr_to_write + 1) % 4 == 0) //if try to write in 3,7,11... blocks
+        if(( block_Addr_to_write + 1) % 4 == 0 || block_Addr_to_write == 0) //if try to write in 3,7,11... blocks
         { 
           BSP_LCD_DisplayStringAt(0, LINE(0), "DETECTED!", CENTER_MODE);
           send_str("Blocks 0,3,7,11,14... read only.");

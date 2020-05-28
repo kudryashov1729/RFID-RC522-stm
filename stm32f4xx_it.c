@@ -274,6 +274,10 @@ void USART1_IRQHandler()
           char str[10];
           select_mode = WRITE_BLOCK;
           send_str("Data: ");
+          for(int i = 0; i < 16; i++)
+          {
+            Data[i] = 0;
+          }
           for(int i = 0; i < 16 && uart1_rx_buf[i]; i++)
           {
             Data[i] = uart1_rx_buf[i];
