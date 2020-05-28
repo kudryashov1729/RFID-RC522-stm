@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
+<<<<<<< HEAD
     <fileChecksum>4176982537</fileChecksum>
     <configuration>
         <name>Debug</name>
@@ -217,17 +218,96 @@
             <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_rcc.o</file>
             <file>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_bus.h</file>
             <file>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f429xx.h</file>
+=======
+    <fileChecksum>4080283713</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_gpio.o</file>
+            <file>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</file>
+            <file>$TOOLKIT_DIR$\config\linker\ST\stm32f429xI.icf</file>
+            <file>$PROJ_DIR$\tm_stm32f4_mfrc522.c</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h</file>
+            <file>$PROJ_DIR$\system_stm32f4xx.c</file>
+            <file>$PROJ_DIR$\TM\tm_stm32f4_spi.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_gpio.xcl</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\startup_stm32f429xx.s</file>
+            <file>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_rcc.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_stm32f4xx.xcl</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_bus.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_rcc.xcl</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_spi.o</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_stm32f429xx.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_gpio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_rcc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h</file>
+            <file>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_spi.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_mfrc522.o</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_spi.xcl</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\project_.pbd</file>
+            <file>$PROJ_DIR$\Debug\Exe\project_.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm4.h</file>
+            <file>$PROJ_DIR$\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c</file>
+            <file>$PROJ_DIR$\TM\tm_stm32f4_spi.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_ll_spi.xcl</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_stm32f4xx.o</file>
+            <file>$PROJ_DIR$\Debug\List\project_.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\tm_stm32f4_spi.o</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\iar\startup_stm32f429xx.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_spi.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_spi.o</file>
+            <file>$PROJ_DIR$\TM\defines.h</file>
+            <file>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.c</file>
+            <file>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.h</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_gpio.c</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_rcc.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_rcc.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_rcc.o</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_spi.c</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_gpio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_gpio.xcl</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_rcc.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f4xx_gpio.o</file>
+            <file>$PROJ_DIR$\SPL\stm32f4xx_spi.h</file>
+>>>>>>> master
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
+<<<<<<< HEAD
                     <file> 111 133</file>
+=======
+                    <file> 38 47</file>
+>>>>>>> master
                 </tool>
             </outputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
             <outputs>
                 <tool>
@@ -246,20 +326,43 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
+=======
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+            <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+                    <file> 28</file>
                 </tool>
-            </inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17</file>
+>>>>>>> master
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+<<<<<<< HEAD
+                    <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 33</file>
+>>>>>>> master
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
         </file>
         <file>
             <name>$PROJ_DIR$\system_stm32f4xx.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 204</file>
                 </tool>
                 <tool>
@@ -269,16 +372,28 @@
                 <tool>
                     <name>__cstat</name>
                     <file> 181</file>
+=======
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 13</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 4 78 93 91 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</name>
             <outputs>
                 <tool>
@@ -288,16 +403,32 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 52</file>
+=======
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 42 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c</name>
             <outputs>
                 <tool>
@@ -320,12 +451,27 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 177</file>
+=======
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 48</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 30 40 36 39 18 22 25 15 14 45 4 49 23 5 16 20 31 12 27</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
@@ -333,12 +479,17 @@
             <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma2d.c</name>
             <outputs>
                 <tool>
+<<<<<<< HEAD
                     <name>ICCARM</name>
                     <file> 77</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
                     <file> 155</file>
+=======
+                    <name>AARM</name>
+                    <file> 21</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
@@ -349,6 +500,7 @@
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_spi.c</name>
             <outputs>
                 <tool>
@@ -415,6 +567,13 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 23</file>
+=======
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 0</file>
+>>>>>>> master
                 </tool>
             </outputs>
         </file>
@@ -427,17 +586,89 @@
                 </tool>
                 <tool>
                     <name>BICOMP</name>
+<<<<<<< HEAD
                     <file> 195</file>
+=======
+                    <file> 8</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\project_.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 2 29 21 0 28 19 46 43 34 51 26</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 13</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\iar\startup_stm32f429xx.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 57 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\stm32f4xx_it.c</name>
             <outputs>
                 <tool>
@@ -447,16 +678,32 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 66</file>
+=======
+            <name>$PROJ_DIR$\SPL\stm32f4xx_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 64</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 101 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79 167 191 199 202</file>
+=======
+                    <file> 63 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5 59</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fmc.c</name>
             <outputs>
                 <tool>
@@ -466,16 +713,32 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 58</file>
+=======
+            <name>$PROJ_DIR$\SPL\stm32f4xx_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 53</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 4 78 93 91 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79</file>
+=======
+                    <file> 67 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5 59</file>
+>>>>>>> master
                 </tool>
             </inputs>
         </file>
         <file>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\..\..\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usart.c</name>
             <outputs>
                 <tool>
@@ -485,11 +748,23 @@
                 <tool>
                     <name>BICOMP</name>
                     <file> 188</file>
+=======
+            <name>$PROJ_DIR$\SPL\stm32f4xx_rcc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 61</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60</file>
+>>>>>>> master
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
+<<<<<<< HEAD
                     <file> 191 28 211 126 110 105 67 84 114 138 89 109 139 193 187 83 4 78 93 91 206 124 42 108 94 62 5 88 17 70 21 189 99 68 74 98 160 87 9 132 174 137 103 106 207 118 152 129 7 150 29 10 41 175 162 120 48 157 100 159 131 171 154 97 185 143 113 73 39 56 43 117 130 203 180 81 183 172 79 65 210</file>
                 </tool>
             </inputs>
@@ -1014,11 +1289,18 @@
             <name>$PROJ_DIR$\Src\stm32f4xx_hal_cortex.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
+=======
+                    <file> 59 20 30 40 36 39 18 22 25 15 14 45 4 49 23 5</file>
+                </tool>
+            </inputs>
+        </file>
+>>>>>>> master
         <forcedrebuild>
             <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\STM32F429I-Discovery\stm32f429i_discovery.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
@@ -1056,6 +1338,25 @@
         </forcedrebuild>
         <forcedrebuild>
             <name>$PROJ_DIR$\Src\stm32f4xx_hal_pwr_ex.c</name>
+=======
+            <name>$PROJ_DIR$\tm_stm32f4_mfrc522.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\system_stm32f4xx.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+>>>>>>> master
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
@@ -1063,6 +1364,7 @@
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
+<<<<<<< HEAD
             <name>$PROJ_DIR$\Src\stm32f4xx_hal_sdram.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
@@ -1085,10 +1387,31 @@
         <forcedrebuild>
             <name>$PROJ_DIR$\Src\stm32f4xx_hal_rcc_ex.c</name>
             <tool>ICCARM</tool>
+=======
+            <name>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_gpio.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_spi.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_rcc.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+>>>>>>> master
         </forcedrebuild>
     </configuration>
     <configuration>
         <name>Release</name>
+<<<<<<< HEAD
         <outputs>
             <file>$PROJ_DIR$\startup_stm32f429xx.s</file>
             <file>$PROJ_DIR$\system_stm32f4xx.c</file>
@@ -1486,6 +1809,12 @@
         </forcedrebuild>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>
+=======
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+>>>>>>> master
         </forcedrebuild>
     </configuration>
 </project>

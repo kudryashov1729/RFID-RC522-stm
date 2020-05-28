@@ -39,7 +39,15 @@ volatile int flag_need_to_print =0;
 
 void led_init(void)
 {
+<<<<<<< HEAD
   GPIO_InitTypeDef GPIOG_Init_led;
+=======
+  /*
+  //CLOCKING
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
+  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SPI1);
+>>>>>>> master
   
   GPIOG_Init_led.Pin = (GPIO_PIN_13 | GPIO_PIN_14);
   GPIOG_Init_led.Mode = GPIO_MODE_OUTPUT_PP;
@@ -433,6 +441,7 @@ void display_print(TM_MFRC522_Status_t status_card_detected, TM_MFRC522_Status_t
   }
 }
 
+<<<<<<< HEAD
 static void SystemClock_Config(void)
 {
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
@@ -464,6 +473,12 @@ static void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
   HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
+=======
+void SPI1_IRQHandler() {
+  resived_data[k] = LL_SPI_ReceiveData8(SPI1);
+  k++;
+*/
+>>>>>>> master
 }
 
 

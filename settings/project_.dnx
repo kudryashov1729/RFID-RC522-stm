@@ -14,10 +14,10 @@
     <StLinkDriver>
         <stlinkserialNo>30303031</stlinkserialNo>
         <stlinkfoundProbes />
-        <CStepIntDis>_ 0</CStepIntDis>
-        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <stlinkResetStyle>0</stlinkResetStyle>
         <stlinkResetStrategy>0</stlinkResetStrategy>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
         <Checksum>1418949185</Checksum>
@@ -126,6 +126,7 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
+<<<<<<< HEAD
     <DisassembleMode>
         <mode>0</mode>
     </DisassembleMode>
@@ -133,6 +134,8 @@
         <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\stm32f4xx_it.c}.79.3" 0 0 1 "" 0 "" 0</Bp0>
         <Count>1</Count>
     </Breakpoints2>
+=======
+>>>>>>> master
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -142,12 +145,15 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
+<<<<<<< HEAD
     <Aliases>
         <A0>_ "D:\Workspaces_stm32_\Project SPI MFRC522\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c" ""</A0>
         <A1>_ "D:\Workspaces_stm32_\Project SPI MFRC522\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c" ""</A1>
         <Count>2</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
+=======
+>>>>>>> master
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>3</Mode>
@@ -161,4 +167,14 @@
     <CallStackStripe>
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Count>0</Count>
+    </Breakpoints2>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
 </settings>

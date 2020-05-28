@@ -225,9 +225,13 @@
                 <option>
                     <name>CCDefines</name>
                     <state>STM32F429xx</state>
+<<<<<<< HEAD
                     <state>USE_FULL_LL_DRIVER</state>
                     <state>USE_STM32F429_DISCO</state>
                     <state>USE_HAL_DRIVER</state>
+=======
+                    <state>USE_STDPERIPH_DRIVER</state>
+>>>>>>> master
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -352,9 +356,16 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
+<<<<<<< HEAD
                     <state>$PROJ_DIR$\tm_stm32f4_mfrc522</state>
                     <state>$PROJ_DIR$\Drivers\STM32F4xx_HAL_Driver\Inc</state>
                     <state>$PROJ_DIR$\Drivers\BSP\STM32F429I-Discovery</state>
+=======
+                    <state>D:\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include</state>
+                    <state>D:\AIR_workspace\STM32Cube_FW_F4_V1.24.0\Drivers\STM32F4xx_HAL_Driver\Inc</state>
+                    <state>D:\Workspaces_stm32_\Project SPI MFRC522\TM</state>
+                    <state>D:\Workspaces_stm32_\Project SPI MFRC522\SPL</state>
+>>>>>>> master
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -2109,6 +2120,7 @@
         </settings>
     </configuration>
     <group>
+<<<<<<< HEAD
         <name>BSP</name>
         <group>
             <name>Components</name>
@@ -2194,5 +2206,47 @@
     </file>
     <file>
         <name>$PROJ_DIR$\tm_stm32f4_mfrc522\tm_stm32f4_mfrc522.c</name>
+=======
+        <name>LL</name>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Src\stm32f4xx_ll_spi.c</name>
+        </file>
+    </group>
+    <group>
+        <name>SPL</name>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_rcc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SPL\stm32f4xx_spi.c</name>
+        </file>
+    </group>
+    <group>
+        <name>TM</name>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_mfrc522.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\TM\tm_stm32f4_spi.c</name>
+        </file>
+    </group>
+    <file>
+        <name>$PROJ_DIR$\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\startup_stm32f429xx.s</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\system_stm32f4xx.c</name>
+>>>>>>> master
     </file>
 </project>
