@@ -267,6 +267,7 @@ void USART1_IRQHandler()
             i++;
           }
           send_str("Block is set. Expect data.\n\r");
+          
         }
         if(counter == 1)
         {
@@ -282,13 +283,13 @@ void USART1_IRQHandler()
           send_str("\n\rReady to write.\n\r");
           flag_need_to_print = 1;
         }
-        if(counter > 1)
+        if(counter == 0)
         {
-          counter = 0;
+          counter = 1;
         }
         else
         {
-          counter = counter + 1;
+          counter = 0;
         }
       }
       break;

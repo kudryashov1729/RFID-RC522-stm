@@ -175,6 +175,8 @@ void main()
         }
         else  
         {
+          BSP_LCD_ClearStringLine(0);
+          BSP_LCD_DisplayStringAt(0, LINE(0), "NO CARD!", CENTER_MODE);
           HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
           i_block = 0;
         }
@@ -211,6 +213,8 @@ void main()
         }
         else  
         {
+          BSP_LCD_ClearStringLine(0);
+          BSP_LCD_DisplayStringAt(0, LINE(0), "NO CARD!", CENTER_MODE);
           HAL_GPIO_WritePin ( GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
           i_block = 0;
         }
