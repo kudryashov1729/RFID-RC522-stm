@@ -12,9 +12,9 @@
 
 ### Используемые библеотеки:
 
-1. (en.STM32Cube_FW_F4_V1.24.0)[https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-mcu-packages/stm32cubef4.html]
-2. (Library 23- Read RFID tag with MF RC522 on STM32F4 UPDATED MARCH 7, 2015)[https://stm32f4-discovery.net/2014/07/library-23-read-rfid-tag-mfrc522-stm32f4xx-devices/#]
-Библеотека была изменена. Новую библеотеку и пример работы с ней можно найти: https://Cloud_kudryashov@bitbucket.org/Cloud_kudryashov/rfid-rc522-stm.git
+1. [en.STM32Cube_FW_F4_V1.24.0](https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-mcu-packages/stm32cubef4.html)
+2. [Library 23- Read RFID tag with MF RC522 on STM32F4 UPDATED MARCH 7, 2015](https://stm32f4-discovery.net/2014/07/library-23-read-rfid-tag-mfrc522-stm32f4xx-devices/#)
+Библеотека была изменена. Новую библеотеку и пример работы с ней можно найти по [ссылке](https://Cloud_kudryashov@bitbucket.org/Cloud_kudryashov/rfid-rc522-stm.git)
 
 ### Список компонентов:
 
